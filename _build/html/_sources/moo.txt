@@ -1,0 +1,8 @@
+Testing links with java
+=======================
+
+.. java:type:: public interface List<E> extends Collection<E>, Iterable<E>
+
+   An ordered collection (also known as a *sequence*)
+
+      :param E: type of item stored by the list

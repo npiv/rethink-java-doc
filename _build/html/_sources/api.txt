@@ -1,0 +1,42 @@
+###
+API
+###
+
+Manipulating Databases
+======================
+
+dbCreate
+--------
+Create a database. A RethinkDB database is a collection of tables, similar to relational databases.
+
+If successful, the operation returns a DMLResult{created=1}. If a database with the same name already exists the operation throws RethinkDBException.
+
+Note: that you can only use alphanumeric characters and underscores for the database name.
+
+Example:
+
+.. code-block:: java
+    
+     DMLResult result = r.dbCreate("db").run(connection);
+
+dbDrop
+------
+Drop a database. The database, all its tables, and corresponding data will be deleted.
+
+If successful, the operation returns the object DMLResult{dropped=1}. If the specified database doesn't exist a RqlRuntimeError is thrown.
+
+Example: Drop a database named 'superheroes'.
+
+.. code-block:: java
+    
+     DMLResult result = r.dbDrop("db").run(connection);
+
+dbList
+------
+List all database names in the system. The result is a list of strings.
+
+Example: 
+
+.. code-block:: java
+    
+     List<String> result = r.dbList().run(connection);

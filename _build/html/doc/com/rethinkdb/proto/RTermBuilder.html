@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RTermBuilder &mdash; rethink-java-driver 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rethink-java-driver 0.1 documentation" href="../../../../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../../index.html" class="fa fa-home"> rethink-java-driver</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <!-- Local TOC -->
+            <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">RTermBuilder</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#addarg">addArg</a></li>
+<li><a class="reference internal" href="#build">build</a></li>
+<li><a class="reference internal" href="#createdatumterm">createDatumTerm</a></li>
+<li><a class="reference internal" href="#datumterm">datumTerm</a></li>
+<li><a class="reference internal" href="#id1">datumTerm</a></li>
+<li><a class="reference internal" href="#id2">datumTerm</a></li>
+<li><a class="reference internal" href="#id3">datumTerm</a></li>
+<li><a class="reference internal" href="#dbterm">dbTerm</a></li>
+<li><a class="reference internal" href="#oftype">ofType</a></li>
+<li><a class="reference internal" href="#tableterm">tableTerm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">rethink-java-driver</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>RTermBuilder</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../../../_sources/doc/com/rethinkdb/proto/RTermBuilder.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="rtermbuilder">
+<h1>RTermBuilder<a class="headerlink" href="#rtermbuilder" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="com.rethinkdb.proto.RTermBuilder">
+public class <tt class="descname">RTermBuilder</tt><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Facilitate creation of ProtoBuf Term objects</p>
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="addarg">
+<h3>addArg<a class="headerlink" href="#addarg" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.addArg(Term)">
+public <a class="reference internal" href="#com.rethinkdb.proto.RTermBuilder" title="com.rethinkdb.proto.RTermBuilder">RTermBuilder</a> <tt class="descname">addArg</tt><big>(</big>Term...<em> args</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.addArg(Term)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="build">
+<h3>build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.build()">
+public Term <tt class="descname">build</tt><big>(</big><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.build()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="createdatumterm">
+<h3>createDatumTerm<a class="headerlink" href="#createdatumterm" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.createDatumTerm(Object)">
+protected static Term <tt class="descname">createDatumTerm</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" title="java.lang.Object">Object</a><em> value</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.createDatumTerm(Object)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="datumterm">
+<h3>datumTerm<a class="headerlink" href="#datumterm" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.datumTerm(String)">
+public static Term <tt class="descname">datumTerm</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> payload</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.datumTerm(String)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h3>datumTerm<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.datumTerm(Number)">
+public static Term <tt class="descname">datumTerm</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html" title="java.lang.Number">Number</a><em> payload</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.datumTerm(Number)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>datumTerm<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.datumTerm(boolean)">
+public static Term <tt class="descname">datumTerm</tt><big>(</big>boolean<em> payload</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.datumTerm(boolean)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>datumTerm<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.datumTerm(DBObject)">
+public static Term <tt class="descname">datumTerm</tt><big>(</big><a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a><em> payload</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.datumTerm(DBObject)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="dbterm">
+<h3>dbTerm<a class="headerlink" href="#dbterm" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.dbTerm(String)">
+public static Term <tt class="descname">dbTerm</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> dbName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.dbTerm(String)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="oftype">
+<h3>ofType<a class="headerlink" href="#oftype" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.ofType(Term.TermType)">
+public <a class="reference internal" href="#com.rethinkdb.proto.RTermBuilder" title="com.rethinkdb.proto.RTermBuilder">RTermBuilder</a> <tt class="descname">ofType</tt><big>(</big>Term.TermType<em> type</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.ofType(Term.TermType)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tableterm">
+<h3>tableTerm<a class="headerlink" href="#tableterm" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.proto.RTermBuilder.tableTerm(String)">
+public static Term <tt class="descname">tableTerm</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.proto.RTermBuilder.tableTerm(String)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Nick Verlinde.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
