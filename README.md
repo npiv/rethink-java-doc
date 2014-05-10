@@ -2,7 +2,7 @@ Documentation generated through Sphinx for the [rethink-java-driver](https://git
 
 Output can be seen here:
 
-[http://npiv.github.io/rethink-java-doc/](http://npiv.github.io/rethink-java-doc/)
+[http://npiv.github.io/rethink-java-doc/](http://npiv.github.io/rethink-java-doc/html/)
 
 
 ### Apache License 2.0
