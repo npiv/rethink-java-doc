@@ -5,7 +5,7 @@ Rethink Java Driver
 Introduction
 ============
 
-The Rethink Java Driver aims to be a fully feature complete driver closely mirroring the existing ruby/python/js implementations. Due to limitations of java being a typed language some inspiration will be sought from existing java big data drivers like mongo to make the api as fluent as possible for the end user.
+The Rethink Java Driver aims to closely mirror the existing ruby/python/js implementations. Due to limitations of java being a typed language some inspiration will be sought from existing java big data drivers like mongo to make the api as fluent as possible for the end user.
 
 Milestones
 ==========
@@ -20,9 +20,9 @@ Get involved
 Development has only started recently. And whilst the first milestone should be hit within the next 2 weeks, there is still plenty to do. contact me on github, or send me a mail at nick.verlinde on the google mail.
 
 
-###
-API
-###
+########
+Java API
+########
 
 Accessing REQL
 ==============
@@ -37,7 +37,7 @@ dbCreate
 --------
 Create a database. A RethinkDB database is a collection of tables, similar to relational databases.
 
-If successful, the operation returns a DMLResult{created=1}. If a database with the same name already exists the operation throws RethinkDBException.
+If successful, the operation returns a :java:ref:`DMLResult` {created=1}. If a database with the same name already exists the operation throws :java:ref:`RethinkDBException`.
 
 Note: that you can only use alphanumeric characters and underscores for the database name.
 
@@ -51,7 +51,7 @@ dbDrop
 ------
 Drop a database. The database, all its tables, and corresponding data will be deleted.
 
-If successful, the operation returns the object DMLResult{dropped=1}. If the specified database doesn't exist a RethinkDBException is thrown.
+If successful, the operation returns the object :java:ref:`DMLResult` {dropped=1}. If the specified database doesn't exist a :java:ref:`RethinkDBException` is thrown.
 
 Example: Drop a database named 'superheroes'.
 
@@ -77,7 +77,7 @@ tableCreate
 -----------
 Create a table. A RethinkDB table is a collection of JSON documents.
 
-If successful, the operation returns a DMLObject{created=1}. If a table with the same name already exists, the operation throws RethinkDBException.
+If successful, the operation returns a :java:ref:`DMLResult` {created=1}. If a table with the same name already exists, the operation throws :java:ref:`RethinkDBException`.
 
 Note: that you can only use alphanumeric characters and underscores for the table name.
 
@@ -93,3 +93,15 @@ Example: Create a table named 'dc_universe' with the default settings.
 .. code-block:: java
     
      DMLResult result = r.tableCreate("dc_universe").run(connection);
+
+Possible Signatures: :java:ref:`RethinkQueryBuilder.tableCreate`
+
+.. java:method:: public DMLResult tableCreate(String tableName) 
+
+.. java:method:: public DMLResult tableCreate(String tableName, String pk, Durability durability, String datacenter) 
+
+tableDrop
+---------
+
+tableList
+---------

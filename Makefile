@@ -49,6 +49,8 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+apis:
+	 javasphinx-apidoc -f -o docs ../rethink-java-driver/src/main/java
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
