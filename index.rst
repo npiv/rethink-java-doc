@@ -27,7 +27,81 @@ Java API
 Accessing REQL
 ==============
 
-Placeholder
+r
+-
+The top-level ReQL namespace.
+
+Example: Set up your top-level namespace.
+
+.. code-block:: java
+
+	private RethinkDB r = RethinkDB.r;
+
+
+connect
+-------
+Create a new connection to the database server. The keyword arguments are:
+
+* host: host of the RethinkDB instance. The default value is localhost.
+* port: the driver port, by default 28015.
+* db: the database used if not explicitly specified in a query, by default test.
+* auth_key: the authentification key, by default the empty string.
+* timeout: timeout period for the connection to be opened, by default 20 (seconds).
+
+If the connection cannot be established, a RqlDriverError exception will be thrown.
+
+Possible Signatures see: :java:ref:`RethinkDB.connect`
+
+Example: Opens a new connection to the database.
+
+.. code-block:: java
+	
+	RethinkDBConnection connection = r.connect();
+
+
+close
+-----
+Close an open connection. Closing a connection waits until all outstanding requests have finished and then frees any open resources associated with the connection. 
+
+TODO: implement noreply wait option
+
+Example: Close an open connection
+
+.. code-block:: java
+	
+	conn.close();
+
+
+reconnect
+---------
+Close and reopen a connection. 
+
+TODO: implement noreply wait option
+
+Example: 
+
+.. code-block:: java
+	
+	conn.reconnect();
+
+
+
+use
+---
+Change the default database on this connection.
+
+Example: Change the default database so that we don't need to specify the database when referencing a table.
+
+.. code-block:: java
+
+	conn.use("marvel");
+	r.table("heroes").run(conn); // refers to r.db("marvel").table("heroes")
+
+
+run
+---
+
+TODO Document
 
 
 Manipulating Databases
@@ -94,14 +168,27 @@ Example: Create a table named 'dc_universe' with the default settings.
     
      DMLResult result = r.tableCreate("dc_universe").run(connection);
 
-Possible Signatures: :java:ref:`RethinkQueryBuilder.tableCreate`
-
-.. java:method:: public DMLResult tableCreate(String tableName) 
-
-.. java:method:: public DMLResult tableCreate(String tableName, String pk, Durability durability, String datacenter) 
+Possible Signatures see: :java:ref:`RethinkQueryBuilder.tableCreate`
 
 tableDrop
 ---------
+Drop a table. The table and all its data will be deleted.
+
+If succesful, the operation returns a :java:ref:`DMLResult` {"dropped": 1}. If the specified table doesn't exist a :java:ref:`RethinkDBException` is thrown.
+
+Example: Drop a table named 'dc_universe'.
+
+.. code-block:: java
+	
+	DMLResult result = r.tableDrop("dv_universe").run(connection);
 
 tableList
 ---------
+
+List all table names in a database. The result is a list of strings.
+
+Example: List all tables of the 'test' database.
+
+.. code-block:: java
+
+	List<String> result = r.tableList().run(connection);

@@ -47,7 +47,11 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
-	rm -rf $(BUILDDIR)/*
+	echo "what?"
+
+copyclean:
+	sed -i 's/RqlRuntimeError/:java:ref:\`RethinkDBException\`/' index.rst	
+
 
 apis:
 	 javasphinx-apidoc -f -o docs ../rethink-java-driver/src/main/java

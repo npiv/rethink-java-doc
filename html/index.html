@@ -68,7 +68,62 @@
 <h1>Java API<a class="headerlink" href="#java-api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="accessing-reql">
 <h2>Accessing REQL<a class="headerlink" href="#accessing-reql" title="Permalink to this headline">¶</a></h2>
-<p>Placeholder</p>
+<div class="section" id="r">
+<h3>r<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
+<p>The top-level ReQL namespace.</p>
+<p>Example: Set up your top-level namespace.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">private</span> <span class="n">RethinkDB</span> <span class="n">r</span> <span class="o">=</span> <span class="n">RethinkDB</span><span class="o">.</span><span class="na">r</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="connect">
+<h3>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
+<p>Create a new connection to the database server. The keyword arguments are:</p>
+<ul class="simple">
+<li>host: host of the RethinkDB instance. The default value is localhost.</li>
+<li>port: the driver port, by default 28015.</li>
+<li>db: the database used if not explicitly specified in a query, by default test.</li>
+<li>auth_key: the authentification key, by default the empty string.</li>
+<li>timeout: timeout period for the connection to be opened, by default 20 (seconds).</li>
+</ul>
+<p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
+<p>Example: Opens a new connection to the database.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="close">
+<h3>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h3>
+<p>Close an open connection. Closing a connection waits until all outstanding requests have finished and then frees any open resources associated with the connection.</p>
+<p>TODO: implement noreply wait option</p>
+<p>Example: Close an open connection</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reconnect">
+<h3>reconnect<a class="headerlink" href="#reconnect" title="Permalink to this headline">¶</a></h3>
+<p>Close and reopen a connection.</p>
+<p>TODO: implement noreply wait option</p>
+<p>Example:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">reconnect</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use">
+<h3>use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h3>
+<p>Change the default database on this connection.</p>
+<p>Example: Change the default database so that we don&#8217;t need to specify the database when referencing a table.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">);</span>
+<span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heroes&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span> <span class="c1">// refers to r.db(&quot;marvel&quot;).table(&quot;heroes&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run">
+<h3>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<p>TODO Document</p>
+</div>
 </div>
 <div class="section" id="manipulating-databases">
 <h2>Manipulating Databases<a class="headerlink" href="#manipulating-databases" title="Permalink to this headline">¶</a></h2>
@@ -118,23 +173,24 @@
 <div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)" title="com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.tableCreate</span></tt></a></p>
-<dl class="method">
-<dt id="tableCreate(String)">
-public <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a> <tt class="descname">tableCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#tableCreate(String)" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="tableCreate(String, String, Durability, String)">
-public <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a> <tt class="descname">tableCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> pk</em>, <a class="reference internal" href="docs/com/rethinkdb/query/option/Durability.html#com.rethinkdb.query.option.Durability" title="com.rethinkdb.query.option.Durability">Durability</a><em> durability</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> datacenter</em><big>)</big><a class="headerlink" href="#tableCreate(String, String, Durability, String)" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)" title="com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.tableCreate</span></tt></a></p>
 </div>
 <div class="section" id="tabledrop">
 <h3>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h3>
+<p>Drop a table. The table and all its data will be deleted.</p>
+<p>If succesful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
+<p>Example: Drop a table named &#8216;dc_universe&#8217;.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableDrop</span><span class="o">(</span><span class="s">&quot;dv_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="tablelist">
 <h3>tableList<a class="headerlink" href="#tablelist" title="Permalink to this headline">¶</a></h3>
+<p>List all table names in a database. The result is a list of strings.</p>
+<p>Example: List all tables of the &#8216;test&#8217; database.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -154,7 +210,15 @@ public <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult
 </ul>
 </li>
 <li><a class="reference internal" href="#java-api">Java API</a><ul>
-<li><a class="reference internal" href="#accessing-reql">Accessing REQL</a></li>
+<li><a class="reference internal" href="#accessing-reql">Accessing REQL</a><ul>
+<li><a class="reference internal" href="#r">r</a></li>
+<li><a class="reference internal" href="#connect">connect</a></li>
+<li><a class="reference internal" href="#close">close</a></li>
+<li><a class="reference internal" href="#reconnect">reconnect</a></li>
+<li><a class="reference internal" href="#use">use</a></li>
+<li><a class="reference internal" href="#run">run</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#manipulating-databases">Manipulating Databases</a><ul>
 <li><a class="reference internal" href="#dbcreate">dbCreate</a></li>
 <li><a class="reference internal" href="#dbdrop">dbDrop</a></li>
