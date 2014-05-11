@@ -176,7 +176,7 @@ Example: Create a table named 'dc_universe' with the default settings.
     
      DDLResult result = r.tableCreate("dc_universe").run(connection);
 
-Possible Signatures: :java:ref:`RethinkQueryBuilder.tableCreate`
+Possible Signatures: :java:ref:`RTDBQuery.tableCreate`
 
 tableDrop
 ---------
@@ -219,7 +219,7 @@ Insert returns an object that contains the following attributes:
 
 See the doc of the returned :java:ref:`DMLResult` for a description of the attributes returned.
 
-Possible Signatures: :java:ref:`RethinkQueryBuilder.insert`
+Possible Signatures: :java:ref:`RTFluentQuery.insert`
 
 .. code-block:: java
 
@@ -246,7 +246,7 @@ getAll
 ------
 Get all documents where the given value matches the value of the requested index.
 
-Possible Signatures: :java:ref:`RethinkQueryBuilder.getAll`
+Possible Signatures: :java:ref:`RTFluentQuery.getAll`
 
 Example: Secondary index keys are not guaranteed to be unique so we cannot query via "get" when using a secondary index.
 
