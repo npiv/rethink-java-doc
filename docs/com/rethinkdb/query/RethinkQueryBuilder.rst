@@ -2,8 +2,6 @@
 
 .. java:import:: com.rethinkdb RethinkDBConstants
 
-.. java:import:: com.rethinkdb RethinkDBException
-
 .. java:import:: com.rethinkdb.model DBObject
 
 .. java:import:: com.rethinkdb.proto Q2L
@@ -12,15 +10,9 @@
 
 .. java:import:: com.rethinkdb.query.option Durability
 
-.. java:import:: com.rethinkdb.response DBResult
-
 .. java:import:: com.rethinkdb.response DMLResult
 
 .. java:import:: com.rethinkdb.response InsertResult
-
-.. java:import:: com.rethinkdb.response StringListDBResult
-
-.. java:import:: java.util ArrayList
 
 .. java:import:: java.util Arrays
 
@@ -59,7 +51,7 @@ dbDrop
 dbList
 ^^^^^^
 
-.. java:method:: public RethinkTerminatingQuery<StringListDBResult> dbList()
+.. java:method:: public RethinkTerminatingQuery<List> dbList()
    :outertype: RethinkQueryBuilder
 
 getAll
@@ -133,6 +125,6 @@ tableDrop
 tableList
 ^^^^^^^^^
 
-.. java:method:: public RethinkTerminatingQuery<StringListDBResult> tableList()
+.. java:method:: public RethinkTerminatingQuery<List> tableList()
    :outertype: RethinkQueryBuilder
 

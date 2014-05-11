@@ -8,7 +8,7 @@
 
 .. java:import:: com.rethinkdb.proto Q2L
 
-.. java:import:: com.rethinkdb.response DBResult
+.. java:import:: java.util List
 
 .. java:import:: java.util.concurrent.atomic AtomicInteger
 
@@ -18,7 +18,7 @@ RethinkTerminatingQuery
 .. java:package:: com.rethinkdb.query
    :noindex:
 
-.. java:type:: public class RethinkTerminatingQuery<T extends DBResult>
+.. java:type:: public class RethinkTerminatingQuery<T>
 
    A query that has no further actions available upon it except run This object is created by RethinkQueryBuilder when the query is complete
 
@@ -27,7 +27,7 @@ Constructors
 RethinkTerminatingQuery
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. java:constructor:: public RethinkTerminatingQuery(Class<? extends DBResult> resultClazz, QueryInformation queryInformation)
+.. java:constructor:: public RethinkTerminatingQuery(Class<T> resultClazz, QueryInformation queryInformation)
    :outertype: RethinkTerminatingQuery
 
 Methods

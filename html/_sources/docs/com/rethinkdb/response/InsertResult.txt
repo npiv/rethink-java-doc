@@ -1,8 +1,4 @@
-.. java:import:: com.rethinkdb.mapper DBObjectMapper
-
 .. java:import:: com.rethinkdb.model DBObject
-
-.. java:import:: com.rethinkdb.proto Q2L
 
 .. java:import:: java.util List
 
@@ -12,7 +8,7 @@ InsertResult
 .. java:package:: com.rethinkdb.response
    :noindex:
 
-.. java:type:: public class InsertResult implements DBResult
+.. java:type:: public class InsertResult
 
 Methods
 -------

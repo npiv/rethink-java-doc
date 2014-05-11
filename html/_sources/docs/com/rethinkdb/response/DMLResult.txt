@@ -4,7 +4,7 @@ DMLResult
 .. java:package:: com.rethinkdb.response
    :noindex:
 
-.. java:type:: public class DMLResult implements DBResult
+.. java:type:: public class DMLResult
 
 Methods
 -------

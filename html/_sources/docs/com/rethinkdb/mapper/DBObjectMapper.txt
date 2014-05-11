@@ -48,6 +48,12 @@ fromDatumObjects
    :param datums: datum objects
    :return: DBObject
 
+populateList
+^^^^^^^^^^^^
+
+.. java:method:: public static <T> T populateList(DBObject dbObject)
+   :outertype: DBObjectMapper
+
 populateObject
 ^^^^^^^^^^^^^^
 

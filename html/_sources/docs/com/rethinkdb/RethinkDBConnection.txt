@@ -1,5 +1,13 @@
 .. java:import:: com.rethinkdb.model DBObject
 
+.. java:import:: com.rethinkdb.proto ProtoUtil
+
+.. java:import:: com.rethinkdb.proto Q2L
+
+.. java:import:: com.rethinkdb.proto RAssocPairBuilder
+
+.. java:import:: com.rethinkdb.proto RTermBuilder
+
 .. java:import:: com.rethinkdb.response DBResultFactory
 
 RethinkDBConnection

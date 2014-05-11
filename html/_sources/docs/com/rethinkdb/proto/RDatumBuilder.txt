@@ -2,8 +2,6 @@
 
 .. java:import:: com.rethinkdb.model DBObject
 
-.. java:import:: java.util List
-
 .. java:import:: java.util Map
 
 RDatumBuilder

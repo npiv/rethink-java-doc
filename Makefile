@@ -52,9 +52,13 @@ clean:
 copyclean:
 	sed -i 's/RqlRuntimeError/:java:ref:\`RethinkDBException\`/' index.rst	
 
+push:
+	git push origin
 
 apis:
+	 mvn javadoc:javadoc -f ../rethink-java-driver/pom.xml
 	 javasphinx-apidoc -f -o docs ../rethink-java-driver/src/main/java
+
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo

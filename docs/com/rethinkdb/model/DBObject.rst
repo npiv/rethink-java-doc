@@ -1,5 +1,3 @@
-.. java:import:: com.rethinkdb.response DBResult
-
 .. java:import:: java.util Collections
 
 .. java:import:: java.util HashMap
@@ -12,7 +10,7 @@ DBObject
 .. java:package:: com.rethinkdb.model
    :noindex:
 
-.. java:type:: @SuppressWarnings public class DBObject implements DBResult
+.. java:type:: @SuppressWarnings public class DBObject
 
    A low level representation of an Object that is stored or read from the database. This is a more convenient interface than a raw map, but ultimately just stores a list of key values.
 
