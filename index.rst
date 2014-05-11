@@ -101,7 +101,15 @@ Example: Change the default database so that we don't need to specify the databa
 run
 ---
 
-TODO Document
+Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.
+
+TODO: implement additional options (use_outdated, time_format, profile and durability)
+
+Example:
+
+.. code-block:: java
+
+	List<DBObject> results = r.table("mystuff").run(connection);
 
 
 Manipulating Databases
@@ -168,7 +176,7 @@ Example: Create a table named 'dc_universe' with the default settings.
     
      DMLResult result = r.tableCreate("dc_universe").run(connection);
 
-Possible Signatures see: :java:ref:`RethinkQueryBuilder.tableCreate`
+Possible Signatures: :java:ref:`RethinkQueryBuilder.tableCreate`
 
 tableDrop
 ---------
@@ -192,3 +200,33 @@ Example: List all tables of the 'test' database.
 .. code-block:: java
 
 	List<String> result = r.tableList().run(connection);
+
+
+Writing Data
+============
+
+Insert
+------
+
+Insert documents into a table. Accepts a single document or an array of documents.
+
+The optional arguments are:
+
+* durability: possible values are hard and soft. This option will override the table or query's durability setting (set in run).
+* In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.
+* return_vals: if set to True and in case of a single insert/upsert, the inserted/updated document will be returned.
+* upsert: when set to True, performs a replace if a document with the same primary key exists.
+Insert returns an object that contains the following attributes:
+
+See the doc of the returned :java:ref:`InsertResult` for a description of the attributes returned.
+
+Possible Signatures: :java:ref:`RethinkQueryBuilder.insert`
+
+.. code-block:: java
+
+	InsertResult result = r.rable("test").insert(
+					   new DBObjectBuilder().with("name", "Jack").build(),
+					   new DBObjectBuilder().with("name", "Jill").build()
+			      ).run(connection);
+
+	result.getInserted() // = 2	

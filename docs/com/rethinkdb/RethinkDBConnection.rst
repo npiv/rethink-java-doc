@@ -70,12 +70,6 @@ run
 .. java:method:: public DBObject run(Q2L.Query.Builder query)
    :outertype: RethinkDBConnection
 
-setDbOptionIfNeeded
-^^^^^^^^^^^^^^^^^^^
-
-.. java:method:: public void setDbOptionIfNeeded(Q2L.Query.Builder q, String db)
-   :outertype: RethinkDBConnection
-
 use
 ^^^
 

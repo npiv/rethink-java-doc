@@ -37,10 +37,10 @@ fromDatumObject
    :param datum: datum
    :return: DBObject
 
-fromDatumObjects
-^^^^^^^^^^^^^^^^
+fromDatumObjectList
+^^^^^^^^^^^^^^^^^^^
 
-.. java:method:: public static DBObject fromDatumObjects(List<Q2L.Datum> datums)
+.. java:method:: public static DBObject fromDatumObjectList(List<Q2L.Datum> datums)
    :outertype: DBObjectMapper
 
    Maps a list of Datum Objects to a DBObject

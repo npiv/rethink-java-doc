@@ -84,10 +84,18 @@ insert
 .. java:method:: public RethinkTerminatingQuery<InsertResult> insert(List<DBObject> dbObjects, Durability durability, boolean returnVals, boolean upsert)
    :outertype: RethinkQueryBuilder
 
+   Insert a list of DBObjects into the database
+
+   :param dbObjects: dbObjects
+   :param durability: Hard or Soft (leave null for default)
+   :param returnVals: if set to true and in case of a single insert/upsert, the inserted/updated document will be returned.
+   :param upsert: when set to true, performs a replace if a document with the same primary key exists.
+   :return: InsertResult
+
 run
 ^^^
 
-.. java:method:: public DBObject run(RethinkDBConnection connection)
+.. java:method:: public List run(RethinkDBConnection connection)
    :outertype: RethinkQueryBuilder
 
 table

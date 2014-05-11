@@ -87,7 +87,7 @@
 <li>timeout: timeout period for the connection to be opened, by default 20 (seconds).</li>
 </ul>
 <p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect()" title="com.rethinkdb.RethinkDB.connect()"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
 <p>Example: Opens a new connection to the database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
 </pre></div>
@@ -122,7 +122,12 @@
 </div>
 <div class="section" id="run">
 <h3>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
-<p>TODO Document</p>
+<p>Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.</p>
+<p>TODO: implement additional options (use_outdated, time_format, profile and durability)</p>
+<p>Example:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;mystuff&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="manipulating-databases">
@@ -173,7 +178,7 @@
 <div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)" title="com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.tableCreate</span></tt></a></p>
+<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)" title="com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.tableCreate</span></tt></a></p>
 </div>
 <div class="section" id="tabledrop">
 <h3>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h3>
@@ -189,6 +194,31 @@
 <p>List all table names in a database. The result is a list of strings.</p>
 <p>Example: List all tables of the &#8216;test&#8217; database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="writing-data">
+<h2>Writing Data<a class="headerlink" href="#writing-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="insert">
+<h3>Insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<p>Insert documents into a table. Accepts a single document or an array of documents.</p>
+<p>The optional arguments are:</p>
+<ul class="simple">
+<li>durability: possible values are hard and soft. This option will override the table or query&#8217;s durability setting (set in run).</li>
+<li>In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
+<li>return_vals: if set to True and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
+<li>upsert: when set to True, performs a replace if a document with the same primary key exists.</li>
+</ul>
+<p>Insert returns an object that contains the following attributes:</p>
+<p>See the doc of the returned <a class="reference internal" href="docs/com/rethinkdb/response/InsertResult.html#com.rethinkdb.response.InsertResult" title="com.rethinkdb.response.InsertResult"><tt class="xref java java-ref docutils literal"><span class="pre">InsertResult</span></tt></a> for a description of the attributes returned.</p>
+<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.insert(List, Durability, boolean, boolean)" title="com.rethinkdb.query.RethinkQueryBuilder.insert(List, Durability, boolean, boolean)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.insert</span></tt></a></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">InsertResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">rable</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span>
+                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jack&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jill&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">()</span>
+                      <span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+
+<span class="n">result</span><span class="o">.</span><span class="na">getInserted</span><span class="o">()</span> <span class="c1">// = 2</span>
 </pre></div>
 </div>
 </div>
@@ -229,6 +259,10 @@
 <li><a class="reference internal" href="#tablecreate">tableCreate</a></li>
 <li><a class="reference internal" href="#tabledrop">tableDrop</a></li>
 <li><a class="reference internal" href="#tablelist">tableList</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#writing-data">Writing Data</a><ul>
+<li><a class="reference internal" href="#insert">Insert</a></li>
 </ul>
 </li>
 </ul>

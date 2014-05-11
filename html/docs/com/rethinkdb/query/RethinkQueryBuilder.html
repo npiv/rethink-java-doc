@@ -120,14 +120,32 @@ public <a class="reference internal" href="RethinkTerminatingQuery.html#com.reth
 <dl class="method">
 <dt id="com.rethinkdb.query.RethinkQueryBuilder.insert(List, Durability, boolean, boolean)">
 public <a class="reference internal" href="RethinkTerminatingQuery.html#com.rethinkdb.query.RethinkTerminatingQuery" title="com.rethinkdb.query.RethinkTerminatingQuery">RethinkTerminatingQuery</a>&lt;<a class="reference internal" href="../response/InsertResult.html#com.rethinkdb.response.InsertResult" title="com.rethinkdb.response.InsertResult">InsertResult</a>&gt; <tt class="descname">insert</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&lt;<a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a>&gt;<em> dbObjects</em>, <a class="reference internal" href="option/Durability.html#com.rethinkdb.query.option.Durability" title="com.rethinkdb.query.option.Durability">Durability</a><em> durability</em>, boolean<em> returnVals</em>, boolean<em> upsert</em><big>)</big><a class="headerlink" href="#com.rethinkdb.query.RethinkQueryBuilder.insert(List, Durability, boolean, boolean)" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Insert a list of DBObjects into the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dbObjects</strong> &#8211; dbObjects</li>
+<li><strong>durability</strong> &#8211; Hard or Soft (leave null for default)</li>
+<li><strong>returnVals</strong> &#8211; if set to true and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
+<li><strong>upsert</strong> &#8211; when set to true, performs a replace if a document with the same primary key exists.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">InsertResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 <div class="section" id="run">
 <h3>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="com.rethinkdb.query.RethinkQueryBuilder.run(RethinkDBConnection)">
-public <a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a> <tt class="descname">run</tt><big>(</big><a class="reference internal" href="../RethinkDBConnection.html#com.rethinkdb.RethinkDBConnection" title="com.rethinkdb.RethinkDBConnection">RethinkDBConnection</a><em> connection</em><big>)</big><a class="headerlink" href="#com.rethinkdb.query.RethinkQueryBuilder.run(RethinkDBConnection)" title="Permalink to this definition">¶</a></dt>
+public <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a> <tt class="descname">run</tt><big>(</big><a class="reference internal" href="../RethinkDBConnection.html#com.rethinkdb.RethinkDBConnection" title="com.rethinkdb.RethinkDBConnection">RethinkDBConnection</a><em> connection</em><big>)</big><a class="headerlink" href="#com.rethinkdb.query.RethinkQueryBuilder.run(RethinkDBConnection)" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
