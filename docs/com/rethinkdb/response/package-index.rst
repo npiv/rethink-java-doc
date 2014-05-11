@@ -7,6 +7,6 @@ com.rethinkdb.response
    :maxdepth: 1
 
    DBResultFactory
+   DDLResult
    DMLResult
-   InsertResult
 

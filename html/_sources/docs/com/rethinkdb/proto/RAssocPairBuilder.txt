@@ -22,3 +22,9 @@ queryPair
 .. java:method:: public static Q2L.Query.AssocPair queryPair(String key, Q2L.Term term)
    :outertype: RAssocPairBuilder
 
+termPair
+^^^^^^^^
+
+.. java:method:: public static Q2L.Term.AssocPair termPair(String key, Q2L.Term value)
+   :outertype: RAssocPairBuilder
+

@@ -1,4 +1,4 @@
-.. java:import:: com.rethinkdb.query RethinkQueryBuilder
+.. java:import:: com.rethinkdb.fluent RTFluentQuery
 
 RethinkDB
 =========
@@ -6,7 +6,7 @@ RethinkDB
 .. java:package:: com.rethinkdb
    :noindex:
 
-.. java:type:: public class RethinkDB extends RethinkQueryBuilder
+.. java:type:: public class RethinkDB extends RTFluentQuery
 
    The starting point for all interaction with RethinkDB. This singleton corresponds to r in the documentation and is used to open a connection or generate a query. i.e:
 

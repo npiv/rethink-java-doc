@@ -27,7 +27,7 @@ build
 createDatumTerm
 ^^^^^^^^^^^^^^^
 
-.. java:method:: protected static Term createDatumTerm(Object value)
+.. java:method:: public static Term createDatumTerm(Object value)
    :outertype: RTermBuilder
 
 datumTerm

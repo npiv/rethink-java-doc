@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RTFluentQuery &mdash; rethink-java-driver 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="rethink-java-driver 0.1 documentation" href="../../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../../../index.html">rethink-java-driver 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rtfluentquery">
+<h1>RTFluentQuery<a class="headerlink" href="#rtfluentquery" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="com.rethinkdb.fluent.RTFluentQuery">
+public class <tt class="descname">RTFluentQuery</tt>&lt;T&gt; extends <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;T&gt;<a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>RTFluentQuery<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.RTFluentQuery()">
+public <tt class="descname">RTFluentQuery</tt><big>(</big><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.RTFluentQuery()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>RTFluentQuery<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.RTFluentQuery(RTTreeKeeper, Class)">
+public <tt class="descname">RTFluentQuery</tt><big>(</big><a class="reference internal" href="../ast/RTTreeKeeper.html#com.rethinkdb.ast.RTTreeKeeper" title="com.rethinkdb.ast.RTTreeKeeper">RTTreeKeeper</a><em> treeKeeper</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> sampleClass</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.RTFluentQuery(RTTreeKeeper, Class)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="db">
+<h3>db<a class="headerlink" href="#db" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.db(String)">
+public <a class="reference internal" href="RTDBQuery.html#com.rethinkdb.fluent.RTDBQuery" title="com.rethinkdb.fluent.RTDBQuery">RTDBQuery</a> <tt class="descname">db</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> dbName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.db(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the database to operate on</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dbName</strong> &#8211; database name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="dbcreate">
+<h3>dbCreate<a class="headerlink" href="#dbcreate" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.dbCreate(String)">
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">dbCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> dbName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.dbCreate(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>create database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dbName</strong> &#8211; database name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="dbdrop">
+<h3>dbDrop<a class="headerlink" href="#dbdrop" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.dbDrop(String)">
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">dbDrop</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> dbName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.dbDrop(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dbName</strong> &#8211; database name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="dblist">
+<h3>dbList<a class="headerlink" href="#dblist" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.dbList()">
+public <a class="reference internal" href="types/RTTopLevelQuery_StringList.html#com.rethinkdb.fluent.types.RTTopLevelQuery_StringList" title="com.rethinkdb.fluent.types.RTTopLevelQuery_StringList">RTTopLevelQuery_StringList</a> <tt class="descname">dbList</tt><big>(</big><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.dbList()" title="Permalink to this definition">¶</a></dt>
+<dd><p>list databases</p>
+</dd></dl>
+
+</div>
+<div class="section" id="get">
+<h3>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.get(String)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a>&gt; <tt class="descname">get</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> key</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.get(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a document by Primary Key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> &#8211; key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>get<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.get(Number)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a>&gt; <tt class="descname">get</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html" title="java.lang.Number">Number</a><em> key</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.get(Number)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a document by Primary Key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> &#8211; key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="getall">
+<h3>getAll<a class="headerlink" href="#getall" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.getAll(String, String)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&gt; <tt class="descname">getAll</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> index</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a>...<em> additionalIndexes</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.getAll(String, String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all documents where the given value matches the value of the requested index(es).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>index</strong> &#8211; at least one index mandatory</li>
+<li><strong>additionalIndexes</strong> &#8211; optional additional indexes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>getAll<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.getAll(String, String, String)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&gt; <tt class="descname">getAll</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> indexName</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> index</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a>...<em> additionalIndexes</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.getAll(String, String, String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all documents where the given value matches the value of the requested index(es).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>indexName</strong> &#8211; the name of the index if not default (id)</li>
+<li><strong>index</strong> &#8211; at least one index mandatory</li>
+<li><strong>additionalIndexes</strong> &#8211; optional additional indexes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>getAll<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&gt; <tt class="descname">getAll</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html" title="java.lang.Number">Number</a><em> index</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html" title="java.lang.Number">Number</a>...<em> additionalIndexes</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all documents where the given value matches the value of the requested index(es).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>index</strong> &#8211; at least one index mandatory</li>
+<li><strong>additionalIndexes</strong> &#8211; optional additional indexes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>getAll<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.getAll(String, Number, Number)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&gt; <tt class="descname">getAll</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> indexName</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html" title="java.lang.Number">Number</a><em> index</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html" title="java.lang.Number">Number</a>...<em> additionalIndexes</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.getAll(String, Number, Number)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all documents where the given value matches the value of the requested index(es).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>indexName</strong> &#8211; the name of the index if not default (id)</li>
+<li><strong>index</strong> &#8211; at least one index mandatory</li>
+<li><strong>additionalIndexes</strong> &#8211; optional additional indexes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="insert">
+<h3>insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.insert(DBObject)">
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">insert</tt><big>(</big><a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a>...<em> objects</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.insert(DBObject)" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert DBObjects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>objects</strong> &#8211; objects to insert</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3>insert<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.insert(List)">
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">insert</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&lt;<a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a>&gt;<em> objects</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.insert(List)" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert DBObjects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>objects</strong> &#8211; objects to insert</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>insert<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.insert(DBObject, Durability, boolean, boolean)">
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">insert</tt><big>(</big><a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a><em> dbObject</em>, <a class="reference internal" href="option/Durability.html#com.rethinkdb.fluent.option.Durability" title="com.rethinkdb.fluent.option.Durability">Durability</a><em> durability</em>, boolean<em> returnVals</em>, boolean<em> upsert</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.insert(DBObject, Durability, boolean, boolean)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert one DBObject into the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dbObject</strong> &#8211; dbObject</li>
+<li><strong>durability</strong> &#8211; Hard or Soft (leave null for default)</li>
+<li><strong>returnVals</strong> &#8211; if set to true and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
+<li><strong>upsert</strong> &#8211; when set to true, performs a replace if a document with the same primary key exists.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h3>insert<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.insert(List, Durability, boolean, boolean)">
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">insert</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html" title="java.util.List">List</a>&lt;<a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a>&gt;<em> dbObjects</em>, <a class="reference internal" href="option/Durability.html#com.rethinkdb.fluent.option.Durability" title="com.rethinkdb.fluent.option.Durability">Durability</a><em> durability</em>, boolean<em> returnVals</em>, boolean<em> upsert</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.insert(List, Durability, boolean, boolean)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a list of DBObjects into the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dbObjects</strong> &#8211; dbObjects</li>
+<li><strong>durability</strong> &#8211; Hard or Soft (leave null for default)</li>
+<li><strong>returnVals</strong> &#8211; if set to true and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
+<li><strong>upsert</strong> &#8211; when set to true, performs a replace if a document with the same primary key exists.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="table">
+<h3>table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.table(String)">
+public <a class="reference internal" href="types/RTFluentQuery_DBObjectList.html#com.rethinkdb.fluent.types.RTFluentQuery_DBObjectList" title="com.rethinkdb.fluent.types.RTFluentQuery_DBObjectList">RTFluentQuery_DBObjectList</a> <tt class="descname">table</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.table(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the table to operate on</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tableName</strong> &#8211; table name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="update">
+<h3>update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="com.rethinkdb.fluent.RTFluentQuery.update(DBObject)">
+public <a class="reference internal" href="#com.rethinkdb.fluent.RTFluentQuery" title="com.rethinkdb.fluent.RTFluentQuery">RTFluentQuery</a>&lt;<a class="reference internal" href="../response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult">DMLResult</a>&gt; <tt class="descname">update</tt><big>(</big><a class="reference internal" href="../model/DBObject.html#com.rethinkdb.model.DBObject" title="com.rethinkdb.model.DBObject">DBObject</a><em> object</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTFluentQuery.update(DBObject)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">RTFluentQuery</a><ul>
+<li><a class="reference internal" href="#constructors">Constructors</a><ul>
+<li><a class="reference internal" href="#id1">RTFluentQuery</a></li>
+<li><a class="reference internal" href="#id2">RTFluentQuery</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#db">db</a></li>
+<li><a class="reference internal" href="#dbcreate">dbCreate</a></li>
+<li><a class="reference internal" href="#dbdrop">dbDrop</a></li>
+<li><a class="reference internal" href="#dblist">dbList</a></li>
+<li><a class="reference internal" href="#get">get</a></li>
+<li><a class="reference internal" href="#id3">get</a></li>
+<li><a class="reference internal" href="#getall">getAll</a></li>
+<li><a class="reference internal" href="#id4">getAll</a></li>
+<li><a class="reference internal" href="#id5">getAll</a></li>
+<li><a class="reference internal" href="#id6">getAll</a></li>
+<li><a class="reference internal" href="#insert">insert</a></li>
+<li><a class="reference internal" href="#id7">insert</a></li>
+<li><a class="reference internal" href="#id8">insert</a></li>
+<li><a class="reference internal" href="#id9">insert</a></li>
+<li><a class="reference internal" href="#table">table</a></li>
+<li><a class="reference internal" href="#update">update</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/com/rethinkdb/fluent/RTFluentQuery.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../../../index.html">rethink-java-driver 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Nick Verlinde.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

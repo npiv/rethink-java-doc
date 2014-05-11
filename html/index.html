@@ -87,7 +87,7 @@
 <li>timeout: timeout period for the connection to be opened, by default 20 (seconds).</li>
 </ul>
 <p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect()" title="com.rethinkdb.RethinkDB.connect()"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
 <p>Example: Opens a new connection to the database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
 </pre></div>
@@ -135,19 +135,19 @@
 <div class="section" id="dbcreate">
 <h3>dbCreate<a class="headerlink" href="#dbcreate" title="Permalink to this headline">¶</a></h3>
 <p>Create a database. A RethinkDB database is a collection of tables, similar to relational databases.</p>
-<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> {created=1}. If a database with the same name already exists the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
+<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a database with the same name already exists the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
 <p>Note: that you can only use alphanumeric characters and underscores for the database name.</p>
 <p>Example:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbCreate</span><span class="o">(</span><span class="s">&quot;db&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbCreate</span><span class="o">(</span><span class="s">&quot;db&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="dbdrop">
 <h3>dbDrop<a class="headerlink" href="#dbdrop" title="Permalink to this headline">¶</a></h3>
 <p>Drop a database. The database, all its tables, and corresponding data will be deleted.</p>
-<p>If successful, the operation returns the object <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> {dropped=1}. If the specified database doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
+<p>If successful, the operation returns the object <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {dropped=1}. If the specified database doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
 <p>Example: Drop a database named &#8216;superheroes&#8217;.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbDrop</span><span class="o">(</span><span class="s">&quot;db&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbDrop</span><span class="o">(</span><span class="s">&quot;db&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>
@@ -165,7 +165,7 @@
 <div class="section" id="tablecreate">
 <h3>tableCreate<a class="headerlink" href="#tablecreate" title="Permalink to this headline">¶</a></h3>
 <p>Create a table. A RethinkDB table is a collection of JSON documents.</p>
-<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> {created=1}. If a table with the same name already exists, the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
+<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a table with the same name already exists, the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
 <p>Note: that you can only use alphanumeric characters and underscores for the table name.</p>
 <p>When creating a table you can specify the following options:</p>
 <ul class="simple">
@@ -175,7 +175,7 @@
 <li>datacenter: the name of the datacenter this table should be assigned to.</li>
 </ul>
 <p>Example: Create a table named &#8216;dc_universe&#8217; with the default settings.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
 <p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)" title="com.rethinkdb.query.RethinkQueryBuilder.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.tableCreate</span></tt></a></p>
@@ -183,9 +183,9 @@
 <div class="section" id="tabledrop">
 <h3>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h3>
 <p>Drop a table. The table and all its data will be deleted.</p>
-<p>If succesful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
+<p>If succesful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
 <p>Example: Drop a table named &#8216;dc_universe&#8217;.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableDrop</span><span class="o">(</span><span class="s">&quot;dv_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableDrop</span><span class="o">(</span><span class="s">&quot;dv_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>
@@ -201,19 +201,18 @@
 <div class="section" id="writing-data">
 <h2>Writing Data<a class="headerlink" href="#writing-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="insert">
-<h3>Insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<h3>insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
 <p>Insert documents into a table. Accepts a single document or an array of documents.</p>
 <p>The optional arguments are:</p>
 <ul class="simple">
-<li>durability: possible values are hard and soft. This option will override the table or query&#8217;s durability setting (set in run).</li>
-<li>In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
+<li>durability: possible values are hard and soft. This option will override the table or query&#8217;s durability setting (set in run). In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
 <li>return_vals: if set to True and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
 <li>upsert: when set to True, performs a replace if a document with the same primary key exists.</li>
 </ul>
 <p>Insert returns an object that contains the following attributes:</p>
-<p>See the doc of the returned <a class="reference internal" href="docs/com/rethinkdb/response/InsertResult.html#com.rethinkdb.response.InsertResult" title="com.rethinkdb.response.InsertResult"><tt class="xref java java-ref docutils literal"><span class="pre">InsertResult</span></tt></a> for a description of the attributes returned.</p>
+<p>See the doc of the returned <a class="reference internal" href="docs/com/rethinkdb/response/DMLResult.html#com.rethinkdb.response.DMLResult" title="com.rethinkdb.response.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> for a description of the attributes returned.</p>
 <p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.insert(List, Durability, boolean, boolean)" title="com.rethinkdb.query.RethinkQueryBuilder.insert(List, Durability, boolean, boolean)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.insert</span></tt></a></p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">InsertResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">rable</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">rable</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span>
                                    <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jack&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
                                    <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jill&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">()</span>
                       <span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
@@ -221,6 +220,31 @@
 <span class="n">result</span><span class="o">.</span><span class="na">getInserted</span><span class="o">()</span> <span class="c1">// = 2</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="get">
+<h3>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<p>Get a document by primary key.</p>
+<p>Example: Find a document with the primary key &#8216;superman&#8217;.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DBObject</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getall">
+<h3>getAll<a class="headerlink" href="#getall" title="Permalink to this headline">¶</a></h3>
+<p>Get all documents where the given value matches the value of the requested index.</p>
+<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/query/RethinkQueryBuilder.html#com.rethinkdb.query.RethinkQueryBuilder.getAll(String, String)" title="com.rethinkdb.query.RethinkQueryBuilder.getAll(String, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkQueryBuilder.getAll</span></tt></a></p>
+<p>Example: Secondary index keys are not guaranteed to be unique so we cannot query via &#8220;get&#8221; when using a secondary index.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">,</span><span class="s">&quot;spiderman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="between">
+<h3>between<a class="headerlink" href="#between" title="Permalink to this headline">¶</a></h3>
+<p>TODO: implement</p>
+</div>
+<div class="section" id="filter">
+<h3>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
+<p>TODO: implement</p>
 </div>
 </div>
 </div>
@@ -262,7 +286,11 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#writing-data">Writing Data</a><ul>
-<li><a class="reference internal" href="#insert">Insert</a></li>
+<li><a class="reference internal" href="#insert">insert</a></li>
+<li><a class="reference internal" href="#get">get</a></li>
+<li><a class="reference internal" href="#getall">getAll</a></li>
+<li><a class="reference internal" href="#between">between</a></li>
+<li><a class="reference internal" href="#filter">filter</a></li>
 </ul>
 </li>
 </ul>

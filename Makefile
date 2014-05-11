@@ -53,6 +53,8 @@ copyclean:
 	sed -i 's/RqlRuntimeError/:java:ref:\`RethinkDBException\`/' index.rst	
 
 push:
+	git add --all
+	git commit -m "auto commit: doctool update docs"
 	git push origin
 
 apis:
