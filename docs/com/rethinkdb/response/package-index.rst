@@ -6,7 +6,6 @@ com.rethinkdb.response
 .. toctree::
    :maxdepth: 1
 
+   DBResponseMapper
    DBResultFactory
-   DDLResult
-   DMLResult
 

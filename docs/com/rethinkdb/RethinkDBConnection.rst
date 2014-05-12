@@ -1,5 +1,7 @@
 .. java:import:: com.rethinkdb.ast RTOperationConverter
 
+.. java:import:: com.rethinkdb.fluent RTFluentQuery
+
 .. java:import:: com.rethinkdb.model DBObject
 
 .. java:import:: com.rethinkdb.proto ProtoUtil
@@ -11,6 +13,10 @@
 .. java:import:: com.rethinkdb.proto RTermBuilder
 
 .. java:import:: com.rethinkdb.response DBResultFactory
+
+.. java:import:: org.slf4j Logger
+
+.. java:import:: org.slf4j LoggerFactory
 
 .. java:import:: java.util.concurrent.atomic AtomicInteger
 
@@ -71,13 +77,7 @@ reconnect
 run
 ^^^
 
-.. java:method:: public DBObject run(Q2L.Query.Builder query)
-   :outertype: RethinkDBConnection
-
-run
-^^^
-
-.. java:method:: public DBObject run(Q2L.Term term)
+.. java:method:: public <T> T run(Q2L.Term term)
    :outertype: RethinkDBConnection
 
 use

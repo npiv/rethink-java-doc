@@ -49,6 +49,12 @@ with
 with
 ^^^^
 
+.. java:method:: public DBObjectBuilder with(String key, Object value)
+   :outertype: DBObjectBuilder
+
+with
+^^^^
+
 .. java:method:: public <T> DBObjectBuilder with(String key, List<T> value)
    :outertype: DBObjectBuilder
 

@@ -1,10 +1,10 @@
-.. java:import:: com.google.common.collect Lists
-
-.. java:import:: com.google.common.collect Maps
+.. java:import:: com.rethinkdb.model DBLambda
 
 .. java:import:: com.rethinkdb.proto Q2L
 
-.. java:import:: java.util Arrays
+.. java:import:: java.util ArrayList
+
+.. java:import:: java.util HashMap
 
 .. java:import:: java.util List
 
@@ -55,7 +55,7 @@ getTermType
 pushArg
 ^^^^^^^
 
-.. java:method:: protected RTOperation pushArg(Object arg)
+.. java:method:: public RTOperation pushArg(Object arg)
    :outertype: RTOperation
 
 toString

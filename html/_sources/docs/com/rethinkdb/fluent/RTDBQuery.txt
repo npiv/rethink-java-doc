@@ -2,15 +2,13 @@
 
 .. java:import:: com.rethinkdb.ast RTTreeKeeper
 
-.. java:import:: com.rethinkdb.fluent.types RTFluentQuery_DBObjectList
-
-.. java:import:: com.rethinkdb.fluent.types RTTopLevelQuery_StringList
-
-.. java:import:: com.rethinkdb.proto Q2L
-
 .. java:import:: com.rethinkdb.fluent.option Durability
 
-.. java:import:: com.rethinkdb.response DDLResult
+.. java:import:: com.rethinkdb.fluent.types RTFluentQueryTypes
+
+.. java:import:: com.rethinkdb.fluent.types RTTopLevelQueryTypes
+
+.. java:import:: com.rethinkdb.proto Q2L
 
 .. java:import:: java.util List
 
@@ -27,7 +25,7 @@ Constructors
 RTDBQuery
 ^^^^^^^^^
 
-.. java:constructor:: public RTDBQuery(RTTreeKeeper treeKeeper, Class<T> sampleClass)
+.. java:constructor:: public RTDBQuery(RTTreeKeeper treeKeeper)
    :outertype: RTDBQuery
 
 Methods
@@ -35,7 +33,7 @@ Methods
 table
 ^^^^^
 
-.. java:method:: public RTFluentQuery_DBObjectList table(String tableName)
+.. java:method:: public RTFluentQueryTypes.ObjectListResult table(String tableName)
    :outertype: RTDBQuery
 
    Select the table to operate on
@@ -45,7 +43,7 @@ table
 tableCreate
 ^^^^^^^^^^^
 
-.. java:method:: public RTTopLevelQuery<DDLResult> tableCreate(String tableName)
+.. java:method:: public RTTopLevelQuery<com.rethinkdb.response.model.DDLResult> tableCreate(String tableName)
    :outertype: RTDBQuery
 
    Create table with tableName, primaryKey, Durability on a specific dataCenter.
@@ -53,7 +51,7 @@ tableCreate
 tableCreate
 ^^^^^^^^^^^
 
-.. java:method:: public RTTopLevelQuery<DDLResult> tableCreate(String tableName, String primaryKey, Durability durability, String datacenter)
+.. java:method:: public RTTopLevelQueryTypes.DDLResult tableCreate(String tableName, String primaryKey, Durability durability, String datacenter)
    :outertype: RTDBQuery
 
    Create table with tableName, primaryKey, Durability on a specific dataCenter.
@@ -66,7 +64,7 @@ tableCreate
 tableDrop
 ^^^^^^^^^
 
-.. java:method:: public RTTopLevelQuery<DDLResult> tableDrop(String tableName)
+.. java:method:: public RTTopLevelQueryTypes.DDLResult tableDrop(String tableName)
    :outertype: RTDBQuery
 
    drop table
@@ -76,7 +74,7 @@ tableDrop
 tableList
 ^^^^^^^^^
 
-.. java:method:: public RTTopLevelQuery_StringList tableList()
+.. java:method:: public RTTopLevelQueryTypes.StringListResult tableList()
    :outertype: RTDBQuery
 
    list tables

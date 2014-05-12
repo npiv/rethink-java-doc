@@ -1,6 +1,4 @@
-.. java:import:: com.rethinkdb.ast RTData
-
-.. java:import:: com.rethinkdb.ast RTOperation
+.. java:import:: com.rethinkdb.fluent RTFluentQuery
 
 .. java:import:: com.rethinkdb.proto Q2L
 

@@ -1,3 +1,5 @@
+.. java:import:: com.rethinkdb.proto Q2L
+
 RTTreeKeeper
 ============
 

@@ -32,9 +32,3 @@ RethinkDBException
 .. java:constructor:: public RethinkDBException(Throwable cause)
    :outertype: RethinkDBException
 
-RethinkDBException
-^^^^^^^^^^^^^^^^^^
-
-.. java:constructor:: public RethinkDBException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
-   :outertype: RethinkDBException
-

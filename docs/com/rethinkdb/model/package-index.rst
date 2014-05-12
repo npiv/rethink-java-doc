@@ -6,6 +6,7 @@ com.rethinkdb.model
 .. toctree::
    :maxdepth: 1
 
+   DBLambda
    DBObject
    DBObjectBuilder
 

@@ -53,8 +53,8 @@ public class <tt class="descname">RTDBQuery</tt>&lt;T&gt; extends <a class="refe
 <div class="section" id="id1">
 <h3>RTDBQuery<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <dl class="constructor">
-<dt id="com.rethinkdb.fluent.RTDBQuery.RTDBQuery(RTTreeKeeper, Class)">
-public <tt class="descname">RTDBQuery</tt><big>(</big><a class="reference internal" href="../ast/RTTreeKeeper.html#com.rethinkdb.ast.RTTreeKeeper" title="com.rethinkdb.ast.RTTreeKeeper">RTTreeKeeper</a><em> treeKeeper</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> sampleClass</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.RTDBQuery(RTTreeKeeper, Class)" title="Permalink to this definition">¶</a></dt>
+<dt id="com.rethinkdb.fluent.RTDBQuery.RTDBQuery(RTTreeKeeper)">
+public <tt class="descname">RTDBQuery</tt><big>(</big><a class="reference internal" href="../ast/RTTreeKeeper.html#com.rethinkdb.ast.RTTreeKeeper" title="com.rethinkdb.ast.RTTreeKeeper">RTTreeKeeper</a><em> treeKeeper</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.RTDBQuery(RTTreeKeeper)" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -65,7 +65,7 @@ public <tt class="descname">RTDBQuery</tt><big>(</big><a class="reference intern
 <h3>table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="com.rethinkdb.fluent.RTDBQuery.table(String)">
-public <a class="reference internal" href="types/RTFluentQuery_DBObjectList.html#com.rethinkdb.fluent.types.RTFluentQuery_DBObjectList" title="com.rethinkdb.fluent.types.RTFluentQuery_DBObjectList">RTFluentQuery_DBObjectList</a> <tt class="descname">table</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.table(String)" title="Permalink to this definition">¶</a></dt>
+public <a class="reference internal" href="types/RTFluentQueryTypes.html#com.rethinkdb.fluent.types.RTFluentQueryTypes" title="com.rethinkdb.fluent.types.RTFluentQueryTypes">RTFluentQueryTypes</a>.<a class="reference internal" href="types/RTFluentQueryTypes-ObjectListResult.html#com.rethinkdb.fluent.types.RTFluentQueryTypes.ObjectListResult" title="com.rethinkdb.fluent.types.RTFluentQueryTypes.ObjectListResult">ObjectListResult</a> <tt class="descname">table</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.table(String)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select the table to operate on</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -85,7 +85,7 @@ public <a class="reference internal" href="types/RTFluentQuery_DBObjectList.html
 <h3>tableCreate<a class="headerlink" href="#tablecreate" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="com.rethinkdb.fluent.RTDBQuery.tableCreate(String)">
-public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult">DDLResult</a>&gt; <tt class="descname">tableCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableCreate(String)" title="Permalink to this definition">¶</a></dt>
+public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;com.<a class="reference internal" href="../package-index.html#com.rethinkdb" title="com.rethinkdb">rethinkdb</a>.<a class="reference internal" href="../response/package-index.html#com.rethinkdb.response" title="com.rethinkdb.response">response</a>.<a class="reference internal" href="../response/model/package-index.html#com.rethinkdb.response.model" title="com.rethinkdb.response.model">model</a>.<a class="reference internal" href="../response/model/DDLResult.html#com.rethinkdb.response.model.DDLResult" title="com.rethinkdb.response.model.DDLResult">DDLResult</a>&gt; <tt class="descname">tableCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableCreate(String)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create table with tableName, primaryKey, Durability on a specific dataCenter.</p>
 </dd></dl>
 
@@ -94,7 +94,7 @@ public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fl
 <h3>tableCreate<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)">
-public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult">DDLResult</a>&gt; <tt class="descname">tableCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> primaryKey</em>, <a class="reference internal" href="option/Durability.html#com.rethinkdb.fluent.option.Durability" title="com.rethinkdb.fluent.option.Durability">Durability</a><em> durability</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> datacenter</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)" title="Permalink to this definition">¶</a></dt>
+public <a class="reference internal" href="types/RTTopLevelQueryTypes.html#com.rethinkdb.fluent.types.RTTopLevelQueryTypes" title="com.rethinkdb.fluent.types.RTTopLevelQueryTypes">RTTopLevelQueryTypes</a>.<a class="reference internal" href="types/RTTopLevelQueryTypes-DDLResult.html#com.rethinkdb.fluent.types.RTTopLevelQueryTypes.DDLResult" title="com.rethinkdb.fluent.types.RTTopLevelQueryTypes.DDLResult">DDLResult</a> <tt class="descname">tableCreate</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> primaryKey</em>, <a class="reference internal" href="option/Durability.html#com.rethinkdb.fluent.option.Durability" title="com.rethinkdb.fluent.option.Durability">Durability</a><em> durability</em>, <a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> datacenter</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create table with tableName, primaryKey, Durability on a specific dataCenter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -117,7 +117,7 @@ public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fl
 <h3>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="com.rethinkdb.fluent.RTDBQuery.tableDrop(String)">
-public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fluent.RTTopLevelQuery" title="com.rethinkdb.fluent.RTTopLevelQuery">RTTopLevelQuery</a>&lt;<a class="reference internal" href="../response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult">DDLResult</a>&gt; <tt class="descname">tableDrop</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableDrop(String)" title="Permalink to this definition">¶</a></dt>
+public <a class="reference internal" href="types/RTTopLevelQueryTypes.html#com.rethinkdb.fluent.types.RTTopLevelQueryTypes" title="com.rethinkdb.fluent.types.RTTopLevelQueryTypes">RTTopLevelQueryTypes</a>.<a class="reference internal" href="types/RTTopLevelQueryTypes-DDLResult.html#com.rethinkdb.fluent.types.RTTopLevelQueryTypes.DDLResult" title="com.rethinkdb.fluent.types.RTTopLevelQueryTypes.DDLResult">DDLResult</a> <tt class="descname">tableDrop</tt><big>(</big><a class="reference external" href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> tableName</em><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableDrop(String)" title="Permalink to this definition">¶</a></dt>
 <dd><p>drop table</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -137,7 +137,7 @@ public <a class="reference internal" href="RTTopLevelQuery.html#com.rethinkdb.fl
 <h3>tableList<a class="headerlink" href="#tablelist" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="com.rethinkdb.fluent.RTDBQuery.tableList()">
-public <a class="reference internal" href="types/RTTopLevelQuery_StringList.html#com.rethinkdb.fluent.types.RTTopLevelQuery_StringList" title="com.rethinkdb.fluent.types.RTTopLevelQuery_StringList">RTTopLevelQuery_StringList</a> <tt class="descname">tableList</tt><big>(</big><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableList()" title="Permalink to this definition">¶</a></dt>
+public <a class="reference internal" href="types/RTTopLevelQueryTypes.html#com.rethinkdb.fluent.types.RTTopLevelQueryTypes" title="com.rethinkdb.fluent.types.RTTopLevelQueryTypes">RTTopLevelQueryTypes</a>.<a class="reference internal" href="types/RTTopLevelQueryTypes-StringListResult.html#com.rethinkdb.fluent.types.RTTopLevelQueryTypes.StringListResult" title="com.rethinkdb.fluent.types.RTTopLevelQueryTypes.StringListResult">StringListResult</a> <tt class="descname">tableList</tt><big>(</big><big>)</big><a class="headerlink" href="#com.rethinkdb.fluent.RTDBQuery.tableList()" title="Permalink to this definition">¶</a></dt>
 <dd><p>list tables</p>
 </dd></dl>
 
@@ -203,7 +203,7 @@ public <a class="reference internal" href="types/RTTopLevelQuery_StringList.html
     </div>
     <div class="footer">
         &copy; Copyright 2014, Nick Verlinde.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
     </div>
   </body>
 </html>

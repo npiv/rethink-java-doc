@@ -16,12 +16,6 @@ DBObject
 
 Fields
 ------
-CHILDREN
-^^^^^^^^
-
-.. java:field:: public static final String CHILDREN
-   :outertype: DBObject
-
 map
 ^^^
 

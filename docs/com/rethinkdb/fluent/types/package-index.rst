@@ -6,6 +6,14 @@ com.rethinkdb.fluent.types
 .. toctree::
    :maxdepth: 1
 
-   RTFluentQuery_DBObjectList
-   RTTopLevelQuery_StringList
+   RTFluentQueryTypes
+   RTFluentQueryTypes-DBObject
+   RTFluentQueryTypes-DoubleListResult
+   RTFluentQueryTypes-GenericListResult
+   RTFluentQueryTypes-ObjectListResult
+   RTFluentQueryTypes-StringListResult
+   RTTopLevelQueryTypes
+   RTTopLevelQueryTypes-DDLResult
+   RTTopLevelQueryTypes-DMLResult
+   RTTopLevelQueryTypes-StringListResult
 
