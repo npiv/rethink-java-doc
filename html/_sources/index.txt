@@ -17,6 +17,8 @@ At the same time with java 8 lambda syntax we should be able to get pretty close
 
 Which pre java 1.8 would need to be invoked with an anonymous inner class like
 
+.. code-block:: java
+
 	r.table("heros").filter(
 		r.lambda(new DBLambda() {
               @Override
@@ -296,7 +298,7 @@ add 2 numbers
 
 .. code-block:: java
 
-	r.table("heros").map(r.lambda(x.field("age").add(22)));
+	r.table("heros").map(r.lambda(x.field("age").add(22))).run(con);
 
 sub
 ---
@@ -304,7 +306,7 @@ sub 2 numbers
 
 .. code-block:: java
 
-	r.table("heros").map(r.lambda(x.field("age").sub(22)));
+	r.table("heros").map(r.lambda(x.field("age").sub(22))).run(con);
 
 mul
 ---
@@ -312,7 +314,7 @@ mul 2 numbers
 
 .. code-block:: java
 
-	r.table("heros").map(r.lambda(x.field("age").mul(22)));
+	r.table("heros").map(r.lambda(x.field("age").mul(22))).run(con);
 
 div
 ---
@@ -320,7 +322,7 @@ div 2 numbers
 
 .. code-block:: java
 
-	r.table("heros").map(r.lambda(x.field("age").div(22)));
+	r.table("heros").map(r.lambda(x.field("age").div(22))).run(con);
 
 mod
 ---
@@ -328,7 +330,7 @@ get the modulus of 2 numbers
 
 .. code-block:: java
 
-	r.table("heros").filter(r.lambda(x.field("age").mod(2))); // get the even ages
+	r.table("heros").filter(r.lambda(x.field("age").mod(2))).run(con); // get the even ages
 
 and
 ---
@@ -341,7 +343,7 @@ Create an and clause.
 			row.field("name").eq("Adam")
 			row.field("id").eq(1)
 		)
-	);
+	).run(con);
 
 
 or
@@ -355,7 +357,7 @@ Create an or clause.
 			row.field("name").eq("Adam")
 			row.field("name").eq("Eve")
 		)
-	);
+	).run(con);
 
 
 eq
@@ -364,7 +366,7 @@ Specifiy an equals condition
 
 .. code-block:: java
 
-	r.table("heros").filter(row-> row.field("name").eq("John")); // All the Johns	
+	r.table("heros").filter(row-> row.field("name").eq("John")).run(con); // All the Johns	
 
 
 ne
@@ -373,7 +375,7 @@ Specifiy a not equal condition
 
 .. code-block:: java
 
-	r.table("heros").filter(row-> row.field("name").ne("John")); // everyone but John
+	r.table("heros").filter(row-> row.field("name").ne("John")).run(con); // everyone but John
 
 gt
 ---
@@ -381,7 +383,7 @@ Specifiy a greater than condition
 
 .. code-block:: java
 
-	r.table("heros").filter(row-> row.field("age").gt(10)); // everyone older than 10
+	r.table("heros").filter(row-> row.field("age").gt(10)).run(con); // everyone older than 10
 
 
 ge
@@ -390,7 +392,7 @@ Specifiy a greater than or equal condition
 
 .. code-block:: java
 
-	r.table("heros").filter(row-> row.field("age").ge(10)); // everyone older than or equal to 10
+	r.table("heros").filter(row-> row.field("age").ge(10)).run(con); // everyone older than or equal to 10
 
 lt
 ---
@@ -398,7 +400,7 @@ Specifiy a less than condition
 
 .. code-block:: java
 
-	r.table("heros").filter(row-> row.field("age").lt(10)); // everyone younger than 10
+	r.table("heros").filter(row-> row.field("age").lt(10)).run(con); // everyone younger than 10
 
 le
 ---
@@ -406,7 +408,7 @@ Specifiy a less than or equal condition
 
 .. code-block:: java
 
-	r.table("heros").filter(row-> row.field("age").le(10)); // everyone younger than or equal to 10
+	r.table("heros").filter(row-> row.field("age").le(10)).run(con); // everyone younger than or equal to 10
 
 
 not
