@@ -24,8 +24,7 @@ Which pre java 1.8 would need to be invoked with an anonymous inner class like
               public RTFluentRow apply(RTFluentRow row) {
               	  return row.field("age").gt(20);
               }
-            })
-	).run(con);
+    })).run(con);
 
 	// Alternatively you can create the class concretely to clean up your code. AdderLambda for example
 
