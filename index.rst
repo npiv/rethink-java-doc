@@ -12,7 +12,7 @@ At the same time with java 8 lambda syntax we should be able to get pretty close
 .. code-block:: java
 
 	r.table("heros").filter(
-		r.lambda(row->row.field("age").gt(20))
+		r.lambda(row->row.field("age").gt(20)) // this is executed remotely!
 	).run(con);
 
 Which pre java 1.8 would need to be invoked with an anonymous inner class like
@@ -34,7 +34,7 @@ Which pre java 1.8 would need to be invoked with an anonymous inner class like
 Both work. 
 
 .. note::
-	For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible. If you are using a 1.6 library then all you have to do is convert it to the Anonymous inner class example. Or create a concrete class that implements :java:ref:`DBLambda`
+	For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible.
 
 
 Milestones

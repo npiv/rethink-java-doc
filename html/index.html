@@ -48,7 +48,7 @@
 <p>The Rethink Java Driver aims to closely mirror the existing ruby/python/js implementations. Due to limitations of java being a typed language some inspiration will be sought from existing java big data drivers like mongo to make the api as fluent as possible for the end user.</p>
 <p>At the same time with java 8 lambda syntax we should be able to get pretty close. The driver itself expects a minimum of java 1.6. But users using java 1.8 can do funky stuff like:</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span>
-        <span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span><span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">20</span><span class="o">))</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span><span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">20</span><span class="o">))</span> <span class="c1">// this is executed remotely!</span>
 <span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
 </pre></div>
 </div>
@@ -69,7 +69,7 @@
 <p>Both work.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible. If you are using a 1.6 library then all you have to do is convert it to the Anonymous inner class example. Or create a concrete class that implements <a class="reference internal" href="docs/com/rethinkdb/model/DBLambda.html#com.rethinkdb.model.DBLambda" title="com.rethinkdb.model.DBLambda"><tt class="xref java java-ref docutils literal"><span class="pre">DBLambda</span></tt></a></p>
+<p class="last">For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible.</p>
 </div>
 </div>
 <div class="section" id="milestones">
@@ -110,7 +110,7 @@
 <li>auth_key: the authentification key, by default the empty string.</li>
 </ul>
 <p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect()" title="com.rethinkdb.RethinkDB.connect()"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
 <p>Example: Opens a new connection to the database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
 </pre></div>
