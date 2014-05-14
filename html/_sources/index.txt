@@ -20,15 +20,15 @@ Which pre java 1.8 would need to be invoked with an anonymous inner class like
 .. code-block:: java
 
     r.table("heros").filter(r.lambda(new DBLambda() {
-              @Override
-              public RTFluentRow apply(RTFluentRow row) {
-              	  return row.field("age").gt(20);
-              }
+          @Override
+          public RTFluentRow apply(RTFluentRow row) {
+              return row.field("age").gt(20);
+          }
     })).run(con);
 
-	// Alternatively you can create the class concretely to clean up your code. AdderLambda for example
+    // Alternatively you can create the class concretely to clean up your code. AdderLambda for example
 
-	r.table("heros").filter(new AdderLambda(20)).run(con);
+    r.table("heros").filter(new AdderLambda(20)).run(con);
 
 Both work. 
 
