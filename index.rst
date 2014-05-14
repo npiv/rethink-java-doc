@@ -30,7 +30,7 @@ Of course you can still choose to create concrete FunctionClasses in pre java 8 
 
 .. code-block:: java
 
-    r.table("heros").filter(new AdderLambda(20)).run(con);
+    r.table("heros").filter(new AgeGTCondition(20)).run(con);
 
 
 .. note::
