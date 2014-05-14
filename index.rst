@@ -26,14 +26,14 @@ Which pre java 1.8 would need to be invoked with an anonymous inner class like
           }
     })).run(con);
 
-    // Alternatively you can create the class concretely to clean up your code. AdderLambda for example
+Of course you can still choose to create concrete FunctionClasses in pre java 8 code and have it look something like:
 
+.. code-block:: java
     r.table("heros").filter(new AdderLambda(20)).run(con);
 
-Both work. 
 
 .. note::
-	For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible.
+	For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible. Just make note that java 1.6+ is supported, albeit in a slightly more limited form.
 
 
 Milestones
