@@ -7,17 +7,46 @@ Introduction
 
 The Rethink Java Driver aims to closely mirror the existing ruby/python/js implementations. Due to limitations of java being a typed language some inspiration will be sought from existing java big data drivers like mongo to make the api as fluent as possible for the end user.
 
+At the same time with java 8 lambda syntax we should be able to get pretty close. The driver itself expects a minimum of java 1.6. But users using java 1.8 can do funky stuff like:
+
+.. code-block:: java
+
+	r.table("heros").filter(
+		r.lambda(row->row.field("age").gt(20))
+	).run(con);
+
+Which pre java 1.8 would need to be invoked with an anonymous inner class like
+
+	r.table("heros").filter(
+		r.lambda(new DBLambda() {
+              @Override
+              public RTFluentRow apply(RTFluentRow row) {
+              	  return row.field("age").gt(20);
+              }
+        })
+	).run(con);
+
+	// Alternatively you can create the class concretely to clean up your code. AdderLambda for example
+
+	r.table("heros").filter(new AdderLambda(20)).run(con);
+
+Both work. 
+
+.. note::
+	For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible. If you are using a 1.6 library then all you have to do is convert it to the Anonymous inner class example. Or create a concrete class that implements :java:ref:`DBLambda`
+
+
 Milestones
 ==========
- * complete implementation of all methods in the `python api <http://rethinkdb.com/api/python/>`_
- * complete integration test of all methods. (these should grow together)
- * ORM module 
+ * complete implementation + documentation of core methods in the `python api <http://rethinkdb.com/api/python/>`_ See the left hand menu for what's there already 
+ * ORM module
  * Spring data integration
  * DB connection pooling
 
-Get involved
-============
-Development has only started recently. And whilst the first milestone should be hit within the next 2 weeks, there is still plenty to do. contact me on github, or send me a mail at nick.verlinde on the google mail.
+
+Contribute
+==========
+Fork, submit an issue, contact me on github, or send me a mail at nick.verlinde on the google mail. I should be able to respond to any of those mediums within 24 hours.
 
 
 ########
@@ -46,7 +75,6 @@ Create a new connection to the database server. The keyword arguments are:
 * port: the driver port, by default 28015.
 * db: the database used if not explicitly specified in a query, by default test.
 * auth_key: the authentification key, by default the empty string.
-* timeout: timeout period for the connection to be opened, by default 20 (seconds).
 
 If the connection cannot be established, a RqlDriverError exception will be thrown.
 
@@ -61,9 +89,7 @@ Example: Opens a new connection to the database.
 
 close
 -----
-Close an open connection. Closing a connection waits until all outstanding requests have finished and then frees any open resources associated with the connection. 
-
-TODO: implement noreply wait option
+Close an open connection.
 
 Example: Close an open connection
 
@@ -72,11 +98,10 @@ Example: Close an open connection
 	conn.close();
 
 
+
 reconnect
 ---------
 Close and reopen a connection. 
-
-TODO: implement noreply wait option
 
 Example: 
 
@@ -102,8 +127,6 @@ run
 ---
 
 Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.
-
-TODO: implement additional options (use_outdated, time_format, profile and durability)
 
 Example:
 
@@ -161,7 +184,8 @@ Create a table. A RethinkDB table is a collection of JSON documents.
 
 If successful, the operation returns a :java:ref:`DDLResult` {created=1}. If a table with the same name already exists, the operation throws :java:ref:`RethinkDBException`.
 
-Note: that you can only use alphanumeric characters and underscores for the table name.
+.. note: 
+	you can only use alphanumeric characters and underscores for the table name.
 
 When creating a table you can specify the following options:
 
@@ -261,3 +285,131 @@ TODO: implement
 filter
 ------
 TODO: implement
+
+
+Math And Logic
+==============
+
+add
+---
+add 2 numbers
+
+.. code-block:: java
+
+	r.table("heros").map(r.lambda(x.field("age").add(22)));
+
+sub
+---
+sub 2 numbers
+
+.. code-block:: java
+
+	r.table("heros").map(r.lambda(x.field("age").sub(22)));
+
+mul
+---
+mul 2 numbers
+
+.. code-block:: java
+
+	r.table("heros").map(r.lambda(x.field("age").mul(22)));
+
+div
+---
+div 2 numbers
+
+.. code-block:: java
+
+	r.table("heros").map(r.lambda(x.field("age").div(22)));
+
+mod
+---
+get the modulus of 2 numbers
+
+.. code-block:: java
+
+	r.table("heros").filter(r.lambda(x.field("age").mod(2))); // get the even ages
+
+and
+---
+Create an and clause.
+
+.. code-block:: java
+
+	r.table("heros").filter(row->
+		r.and(
+			row.field("name").eq("Adam")
+			row.field("id").eq(1)
+		)
+	);
+
+
+or
+---
+Create an or clause.
+
+.. code-block:: java
+
+	r.table("heros").filter(row->
+		r.and(
+			row.field("name").eq("Adam")
+			row.field("name").eq("Eve")
+		)
+	);
+
+
+eq
+---
+Specifiy an equals condition
+
+.. code-block:: java
+
+	r.table("heros").filter(row-> row.field("name").eq("John")); // All the Johns	
+
+
+ne
+---
+Specifiy a not equal condition
+
+.. code-block:: java
+
+	r.table("heros").filter(row-> row.field("name").ne("John")); // everyone but John
+
+gt
+---
+Specifiy a greater than condition
+
+.. code-block:: java
+
+	r.table("heros").filter(row-> row.field("age").gt(10)); // everyone older than 10
+
+
+ge
+---
+Specifiy a greater than or equal condition
+
+.. code-block:: java
+
+	r.table("heros").filter(row-> row.field("age").ge(10)); // everyone older than or equal to 10
+
+lt
+---
+Specifiy a less than condition
+
+.. code-block:: java
+
+	r.table("heros").filter(row-> row.field("age").lt(10)); // everyone younger than 10
+
+le
+---
+Specifiy a less than or equal condition
+
+.. code-block:: java
+
+	r.table("heros").filter(row-> row.field("age").le(10)); // everyone younger than or equal to 10
+
+
+not
+---
+todo: doc and test
+

@@ -46,22 +46,50 @@
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The Rethink Java Driver aims to closely mirror the existing ruby/python/js implementations. Due to limitations of java being a typed language some inspiration will be sought from existing java big data drivers like mongo to make the api as fluent as possible for the end user.</p>
+<p>At the same time with java 8 lambda syntax we should be able to get pretty close. The driver itself expects a minimum of java 1.6. But users using java 1.8 can do funky stuff like:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span><span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">20</span><span class="o">))</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Which pre java 1.8 would need to be invoked with an anonymous inner class like</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>r.table(&#8220;heros&#8221;).filter(</dt>
+<dd><blockquote class="first">
+<div>r.lambda(new DBLambda() {</div></blockquote>
+<p>&#64;Override
+public RTFluentRow apply(RTFluentRow row) {</p>
+<blockquote>
+<div>return row.field(&#8220;age&#8221;).gt(20);</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>})
+).run(con);</p>
+<p>// Alternatively you can create the class concretely to clean up your code. AdderLambda for example</p>
+<p>r.table(&#8220;heros&#8221;).filter(new AdderLambda(20)).run(con);</p>
+</div></blockquote>
+<p>Both work.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible. If you are using a 1.6 library then all you have to do is convert it to the Anonymous inner class example. Or create a concrete class that implements <a class="reference internal" href="docs/com/rethinkdb/model/DBLambda.html#com.rethinkdb.model.DBLambda" title="com.rethinkdb.model.DBLambda"><tt class="xref java java-ref docutils literal"><span class="pre">DBLambda</span></tt></a></p>
+</div>
 </div>
 <div class="section" id="milestones">
 <h2>Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>complete implementation of all methods in the <a class="reference external" href="http://rethinkdb.com/api/python/">python api</a></li>
-<li>complete integration test of all methods. (these should grow together)</li>
+<li>complete implementation + documentation of core methods in the <a class="reference external" href="http://rethinkdb.com/api/python/">python api</a> See the left hand menu for what&#8217;s there already</li>
 <li>ORM module</li>
 <li>Spring data integration</li>
 <li>DB connection pooling</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="get-involved">
-<h2>Get involved<a class="headerlink" href="#get-involved" title="Permalink to this headline">¶</a></h2>
-<p>Development has only started recently. And whilst the first milestone should be hit within the next 2 weeks, there is still plenty to do. contact me on github, or send me a mail at nick.verlinde on the google mail.</p>
+<div class="section" id="contribute">
+<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
+<p>Fork, submit an issue, contact me on github, or send me a mail at nick.verlinde on the google mail. I should be able to respond to any of those mediums within 24 hours.</p>
 </div>
 </div>
 <div class="section" id="java-api">
@@ -84,10 +112,9 @@
 <li>port: the driver port, by default 28015.</li>
 <li>db: the database used if not explicitly specified in a query, by default test.</li>
 <li>auth_key: the authentification key, by default the empty string.</li>
-<li>timeout: timeout period for the connection to be opened, by default 20 (seconds).</li>
 </ul>
 <p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect()" title="com.rethinkdb.RethinkDB.connect()"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
 <p>Example: Opens a new connection to the database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
 </pre></div>
@@ -95,8 +122,7 @@
 </div>
 <div class="section" id="close">
 <h3>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h3>
-<p>Close an open connection. Closing a connection waits until all outstanding requests have finished and then frees any open resources associated with the connection.</p>
-<p>TODO: implement noreply wait option</p>
+<p>Close an open connection.</p>
 <p>Example: Close an open connection</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 </pre></div>
@@ -105,7 +131,6 @@
 <div class="section" id="reconnect">
 <h3>reconnect<a class="headerlink" href="#reconnect" title="Permalink to this headline">¶</a></h3>
 <p>Close and reopen a connection.</p>
-<p>TODO: implement noreply wait option</p>
 <p>Example:</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">reconnect</span><span class="o">();</span>
 </pre></div>
@@ -123,7 +148,6 @@
 <div class="section" id="run">
 <h3>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
 <p>Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.</p>
-<p>TODO: implement additional options (use_outdated, time_format, profile and durability)</p>
 <p>Example:</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;mystuff&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
@@ -166,7 +190,6 @@
 <h3>tableCreate<a class="headerlink" href="#tablecreate" title="Permalink to this headline">¶</a></h3>
 <p>Create a table. A RethinkDB table is a collection of JSON documents.</p>
 <p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a table with the same name already exists, the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
-<p>Note: that you can only use alphanumeric characters and underscores for the table name.</p>
 <p>When creating a table you can specify the following options:</p>
 <ul class="simple">
 <li>primaryKey: the name of the primary key. The default primary key is id;</li>
@@ -247,6 +270,114 @@
 <p>TODO: implement</p>
 </div>
 </div>
+<div class="section" id="math-and-logic">
+<h2>Math And Logic<a class="headerlink" href="#math-and-logic" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="add">
+<h3>add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
+<p>add 2 numbers</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="mi">22</span><span class="o">)));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sub">
+<h3>sub<a class="headerlink" href="#sub" title="Permalink to this headline">¶</a></h3>
+<p>sub 2 numbers</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">sub</span><span class="o">(</span><span class="mi">22</span><span class="o">)));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mul">
+<h3>mul<a class="headerlink" href="#mul" title="Permalink to this headline">¶</a></h3>
+<p>mul 2 numbers</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">mul</span><span class="o">(</span><span class="mi">22</span><span class="o">)));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="div">
+<h3>div<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
+<p>div 2 numbers</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">div</span><span class="o">(</span><span class="mi">22</span><span class="o">)));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mod">
+<h3>mod<a class="headerlink" href="#mod" title="Permalink to this headline">¶</a></h3>
+<p>get the modulus of 2 numbers</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">mod</span><span class="o">(</span><span class="mi">2</span><span class="o">)));</span> <span class="c1">// get the even ages</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="and">
+<h3>and<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
+<p>Create an and clause.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">and</span><span class="o">(</span>
+                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;Adam&quot;</span><span class="o">)</span>
+                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+        <span class="o">)</span>
+<span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="or">
+<h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+<p>Create an or clause.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">and</span><span class="o">(</span>
+                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;Adam&quot;</span><span class="o">)</span>
+                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;Eve&quot;</span><span class="o">)</span>
+        <span class="o">)</span>
+<span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="eq">
+<h3>eq<a class="headerlink" href="#eq" title="Permalink to this headline">¶</a></h3>
+<p>Specifiy an equals condition</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">));</span> <span class="c1">// All the Johns</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ne">
+<h3>ne<a class="headerlink" href="#ne" title="Permalink to this headline">¶</a></h3>
+<p>Specifiy a not equal condition</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">ne</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">));</span> <span class="c1">// everyone but John</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gt">
+<h3>gt<a class="headerlink" href="#gt" title="Permalink to this headline">¶</a></h3>
+<p>Specifiy a greater than condition</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span> <span class="c1">// everyone older than 10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ge">
+<h3>ge<a class="headerlink" href="#ge" title="Permalink to this headline">¶</a></h3>
+<p>Specifiy a greater than or equal condition</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">ge</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span> <span class="c1">// everyone older than or equal to 10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lt">
+<h3>lt<a class="headerlink" href="#lt" title="Permalink to this headline">¶</a></h3>
+<p>Specifiy a less than condition</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">lt</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span> <span class="c1">// everyone younger than 10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="le">
+<h3>le<a class="headerlink" href="#le" title="Permalink to this headline">¶</a></h3>
+<p>Specifiy a less than or equal condition</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">le</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span> <span class="c1">// everyone younger than or equal to 10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="not">
+<h3>not<a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
+<p>todo: doc and test</p>
+</div>
+</div>
 </div>
 
 
@@ -260,7 +391,7 @@
 <li><a class="reference internal" href="#">Rethink Java Driver</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#milestones">Milestones</a></li>
-<li><a class="reference internal" href="#get-involved">Get involved</a></li>
+<li><a class="reference internal" href="#contribute">Contribute</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#java-api">Java API</a><ul>
@@ -291,6 +422,23 @@
 <li><a class="reference internal" href="#getall">getAll</a></li>
 <li><a class="reference internal" href="#between">between</a></li>
 <li><a class="reference internal" href="#filter">filter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#math-and-logic">Math And Logic</a><ul>
+<li><a class="reference internal" href="#add">add</a></li>
+<li><a class="reference internal" href="#sub">sub</a></li>
+<li><a class="reference internal" href="#mul">mul</a></li>
+<li><a class="reference internal" href="#div">div</a></li>
+<li><a class="reference internal" href="#mod">mod</a></li>
+<li><a class="reference internal" href="#and">and</a></li>
+<li><a class="reference internal" href="#or">or</a></li>
+<li><a class="reference internal" href="#eq">eq</a></li>
+<li><a class="reference internal" href="#ne">ne</a></li>
+<li><a class="reference internal" href="#gt">gt</a></li>
+<li><a class="reference internal" href="#ge">ge</a></li>
+<li><a class="reference internal" href="#lt">lt</a></li>
+<li><a class="reference internal" href="#le">le</a></li>
+<li><a class="reference internal" href="#not">not</a></li>
 </ul>
 </li>
 </ul>
@@ -330,7 +478,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, Nick Verlinde.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
