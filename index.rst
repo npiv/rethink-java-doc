@@ -19,7 +19,7 @@ Which pre java 1.8 would need to be invoked with an anonymous inner class like
 
 .. code-block:: java
 
-	r.table("heros").filter(r.lambda(new DBLambda() {
+    r.table("heros").filter(r.lambda(new DBLambda() {
               @Override
               public RTFluentRow apply(RTFluentRow row) {
               	  return row.field("age").gt(20);
