@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Writing Data &mdash; rethink-java-driver 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rethink-java-driver 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Math And Logic" href="math_logic.html"/>
+        <link rel="prev" title="Manipulating Tables" href="manipulating_tables.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> rethink-java-driver</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#close">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dblist">dbList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#between">between</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#not">not</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dblist">dbList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_tables.html">Manipulating Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Writing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">rethink-java-driver</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Writing Data</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/writing_data.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="writing-data">
+<h1>Writing Data<a class="headerlink" href="#writing-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="insert">
+<h2>insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h2>
+<p>Insert documents into a table. Accepts a single document or an array of documents.</p>
+<p>The optional arguments are:</p>
+<ul class="simple">
+<li>durability: possible values are hard and soft. This option will override the table or query&#8217;s durability setting (set in run). In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
+<li>return_vals: if set to True and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
+<li>upsert: when set to True, performs a replace if a document with the same primary key exists.</li>
+</ul>
+<p>Insert returns an object that contains the following attributes:</p>
+<p>See the doc of the returned <a class="reference internal" href="docs/com/rethinkdb/response/model/DMLResult.html#com.rethinkdb.response.model.DMLResult" title="com.rethinkdb.response.model.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> for a description of the attributes returned.</p>
+<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTFluentQuery.html#com.rethinkdb.fluent.RTFluentQuery.insert(com.rethinkdb.model.DBObject, Durability, boolean, boolean)" title="com.rethinkdb.fluent.RTFluentQuery.insert(com.rethinkdb.model.DBObject, Durability, boolean, boolean)"><tt class="xref java java-ref docutils literal"><span class="pre">RTFluentQuery.insert</span></tt></a></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">rable</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span>
+                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jack&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jill&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">()</span>
+                      <span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+
+<span class="n">result</span><span class="o">.</span><span class="na">getInserted</span><span class="o">()</span> <span class="c1">// = 2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get">
+<h2>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<p>Get a document by primary key.</p>
+<p>Example: Find a document with the primary key &#8216;superman&#8217;.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DBObject</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getall">
+<h2>getAll<a class="headerlink" href="#getall" title="Permalink to this headline">¶</a></h2>
+<p>Get all documents where the given value matches the value of the requested index.</p>
+<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTFluentQuery.html#com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)" title="com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)"><tt class="xref java java-ref docutils literal"><span class="pre">RTFluentQuery.getAll</span></tt></a></p>
+<p>Example: Secondary index keys are not guaranteed to be unique so we cannot query via &#8220;get&#8221; when using a secondary index.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">,</span><span class="s">&quot;spiderman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>TODO: implement</p>
+</div>
+<div class="section" id="filter">
+<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<p>TODO: implement</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="math_logic.html" class="btn btn-neutral float-right" title="Math And Logic"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manipulating_tables.html" class="btn btn-neutral" title="Manipulating Tables"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Nick Verlinde.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

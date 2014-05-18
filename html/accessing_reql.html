@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Accessing REQL &mdash; rethink-java-driver 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rethink-java-driver 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Manipulating Databases" href="manipulating_databases.html"/>
+        <link rel="prev" title="Rethink Java Driver" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> rethink-java-driver</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Accessing REQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#r">r</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#close">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reconnect">reconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use">use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run">run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dblist">dbList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_tables.html">Manipulating Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">rethink-java-driver</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Accessing REQL</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/accessing_reql.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="accessing-reql">
+<h1>Accessing REQL<a class="headerlink" href="#accessing-reql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="r">
+<h2>r<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h2>
+<p>The top-level ReQL namespace.</p>
+<p>Example: Set up your top-level namespace.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">private</span> <span class="n">RethinkDB</span> <span class="n">r</span> <span class="o">=</span> <span class="n">RethinkDB</span><span class="o">.</span><span class="na">r</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="connect">
+<h2>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h2>
+<p>Create a new connection to the database server. The keyword arguments are:</p>
+<ul class="simple">
+<li>host: host of the RethinkDB instance. The default value is localhost.</li>
+<li>port: the driver port, by default 28015.</li>
+<li>db: the database used if not explicitly specified in a query, by default test.</li>
+<li>auth_key: the authentification key, by default the empty string.</li>
+</ul>
+<p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
+<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
+<p>Example: Opens a new connection to the database.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="close">
+<h2>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h2>
+<p>Close an open connection.</p>
+<p>Example: Close an open connection</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reconnect">
+<h2>reconnect<a class="headerlink" href="#reconnect" title="Permalink to this headline">¶</a></h2>
+<p>Close and reopen a connection.</p>
+<p>Example:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">reconnect</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use">
+<h2>use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h2>
+<p>Change the default database on this connection.</p>
+<p>Example: Change the default database so that we don&#8217;t need to specify the database when referencing a table.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">);</span>
+<span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heroes&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span> <span class="c1">// refers to r.db(&quot;marvel&quot;).table(&quot;heroes&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run">
+<h2>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.</p>
+<p>Example:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;mystuff&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manipulating_databases.html" class="btn btn-neutral float-right" title="Manipulating Databases"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Rethink Java Driver"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Nick Verlinde.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

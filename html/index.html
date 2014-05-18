@@ -1,45 +1,146 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Rethink Java Driver &mdash; rethink-java-driver 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="rethink-java-driver 0.1 documentation" href="#" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li><a href="#">rethink-java-driver 0.1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Rethink Java Driver &mdash; rethink-java-driver 0.1 documentation</title>
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rethink-java-driver 0.1 documentation" href="#"/>
+        <link rel="next" title="Rethink Java Driver" href=""/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="#" class="fa fa-home"> rethink-java-driver</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Rethink Java Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#close">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dblist">dbList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_tables.html">Manipulating Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">rethink-java-driver</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Rethink Java Driver</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
             
   <div class="section" id="rethink-java-driver">
 <h1>Rethink Java Driver<a class="headerlink" href="#rethink-java-driver" title="Permalink to this headline">¶</a></h1>
@@ -84,395 +185,128 @@
 <div class="section" id="contribute">
 <h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
 <p>Fork, submit an issue, contact me on github, or send me a mail at nick.verlinde on the google mail. I should be able to respond to any of those mediums within 24 hours.</p>
-</div>
-</div>
-<div class="section" id="java-api">
-<h1>Java API<a class="headerlink" href="#java-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="accessing-reql">
-<h2>Accessing REQL<a class="headerlink" href="#accessing-reql" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="r">
-<h3>r<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
-<p>The top-level ReQL namespace.</p>
-<p>Example: Set up your top-level namespace.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="kd">private</span> <span class="n">RethinkDB</span> <span class="n">r</span> <span class="o">=</span> <span class="n">RethinkDB</span><span class="o">.</span><span class="na">r</span><span class="o">;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="connect">
-<h3>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
-<p>Create a new connection to the database server. The keyword arguments are:</p>
-<ul class="simple">
-<li>host: host of the RethinkDB instance. The default value is localhost.</li>
-<li>port: the driver port, by default 28015.</li>
-<li>db: the database used if not explicitly specified in a query, by default test.</li>
-<li>auth_key: the authentification key, by default the empty string.</li>
+<div class="section" id="user-documentation">
+<h3>User Documentation<a class="headerlink" href="#user-documentation" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Rethink Java Driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
 </ul>
-<p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
-<p>Example: Opens a new connection to the database.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="close">
-<h3>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h3>
-<p>Close an open connection.</p>
-<p>Example: Close an open connection</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="reconnect">
-<h3>reconnect<a class="headerlink" href="#reconnect" title="Permalink to this headline">¶</a></h3>
-<p>Close and reopen a connection.</p>
-<p>Example:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">reconnect</span><span class="o">();</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="use">
-<h3>use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h3>
-<p>Change the default database on this connection.</p>
-<p>Example: Change the default database so that we don&#8217;t need to specify the database when referencing a table.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">);</span>
-<span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heroes&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span> <span class="c1">// refers to r.db(&quot;marvel&quot;).table(&quot;heroes&quot;)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="run">
-<h3>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
-<p>Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.</p>
-<p>Example:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;mystuff&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="manipulating-databases">
-<h2>Manipulating Databases<a class="headerlink" href="#manipulating-databases" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dbcreate">
-<h3>dbCreate<a class="headerlink" href="#dbcreate" title="Permalink to this headline">¶</a></h3>
-<p>Create a database. A RethinkDB database is a collection of tables, similar to relational databases.</p>
-<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a database with the same name already exists the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
-<p>Note: that you can only use alphanumeric characters and underscores for the database name.</p>
-<p>Example:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbCreate</span><span class="o">(</span><span class="s">&quot;db&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="dbdrop">
-<h3>dbDrop<a class="headerlink" href="#dbdrop" title="Permalink to this headline">¶</a></h3>
-<p>Drop a database. The database, all its tables, and corresponding data will be deleted.</p>
-<p>If successful, the operation returns the object <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {dropped=1}. If the specified database doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
-<p>Example: Drop a database named &#8216;superheroes&#8217;.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbDrop</span><span class="o">(</span><span class="s">&quot;db&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="dblist">
-<h3>dbList<a class="headerlink" href="#dblist" title="Permalink to this headline">¶</a></h3>
-<p>List all database names in the system. The result is a list of strings.</p>
-<p>Example:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">dbList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="manipulating-tables">
-<h2>Manipulating Tables<a class="headerlink" href="#manipulating-tables" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="tablecreate">
-<h3>tableCreate<a class="headerlink" href="#tablecreate" title="Permalink to this headline">¶</a></h3>
-<p>Create a table. A RethinkDB table is a collection of JSON documents.</p>
-<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a table with the same name already exists, the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
-<p>When creating a table you can specify the following options:</p>
-<ul class="simple">
-<li>primaryKey: the name of the primary key. The default primary key is id;</li>
-<li>durability: if set to &#8216;soft&#8217;, this enables soft durability on this table: writes will be</li>
-<li>acknowledged by the server immediately and flushed to disk in the background. Default is &#8216;hard&#8217; (acknowledgement of writes happens after data has been written to disk);</li>
-<li>datacenter: the name of the datacenter this table should be assigned to.</li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#close">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
 </ul>
-<p>Example: Create a table named &#8216;dc_universe&#8217; with the default settings.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTDBQuery.html#com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)" title="com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RTDBQuery.tableCreate</span></tt></a></p>
-</div>
-<div class="section" id="tabledrop">
-<h3>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h3>
-<p>Drop a table. The table and all its data will be deleted.</p>
-<p>If succesful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
-<p>Example: Drop a table named &#8216;dc_universe&#8217;.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableDrop</span><span class="o">(</span><span class="s">&quot;dv_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="tablelist">
-<h3>tableList<a class="headerlink" href="#tablelist" title="Permalink to this headline">¶</a></h3>
-<p>List all table names in a database. The result is a list of strings.</p>
-<p>Example: List all tables of the &#8216;test&#8217; database.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="writing-data">
-<h2>Writing Data<a class="headerlink" href="#writing-data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="insert">
-<h3>insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
-<p>Insert documents into a table. Accepts a single document or an array of documents.</p>
-<p>The optional arguments are:</p>
-<ul class="simple">
-<li>durability: possible values are hard and soft. This option will override the table or query&#8217;s durability setting (set in run). In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
-<li>return_vals: if set to True and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
-<li>upsert: when set to True, performs a replace if a document with the same primary key exists.</li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dblist">dbList</a></li>
 </ul>
-<p>Insert returns an object that contains the following attributes:</p>
-<p>See the doc of the returned <a class="reference internal" href="docs/com/rethinkdb/response/model/DMLResult.html#com.rethinkdb.response.model.DMLResult" title="com.rethinkdb.response.model.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> for a description of the attributes returned.</p>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTFluentQuery.html#com.rethinkdb.fluent.RTFluentQuery.insert(com.rethinkdb.model.DBObject, Durability, boolean, boolean)" title="com.rethinkdb.fluent.RTFluentQuery.insert(com.rethinkdb.model.DBObject, Durability, boolean, boolean)"><tt class="xref java java-ref docutils literal"><span class="pre">RTFluentQuery.insert</span></tt></a></p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">rable</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span>
-                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jack&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
-                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jill&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">()</span>
-                      <span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
-
-<span class="n">result</span><span class="o">.</span><span class="na">getInserted</span><span class="o">()</span> <span class="c1">// = 2</span>
-</pre></div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_tables.html">Manipulating Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
+</ul>
+</li>
+</ul>
 </div>
-</div>
-<div class="section" id="get">
-<h3>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
-<p>Get a document by primary key.</p>
-<p>Example: Find a document with the primary key &#8216;superman&#8217;.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DBObject</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="getall">
-<h3>getAll<a class="headerlink" href="#getall" title="Permalink to this headline">¶</a></h3>
-<p>Get all documents where the given value matches the value of the requested index.</p>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTFluentQuery.html#com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)" title="com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)"><tt class="xref java java-ref docutils literal"><span class="pre">RTFluentQuery.getAll</span></tt></a></p>
-<p>Example: Secondary index keys are not guaranteed to be unique so we cannot query via &#8220;get&#8221; when using a secondary index.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">,</span><span class="s">&quot;spiderman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="between">
-<h3>between<a class="headerlink" href="#between" title="Permalink to this headline">¶</a></h3>
-<p>TODO: implement</p>
-</div>
-<div class="section" id="filter">
-<h3>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
-<p>TODO: implement</p>
-</div>
-</div>
-<div class="section" id="math-and-logic">
-<h2>Math And Logic<a class="headerlink" href="#math-and-logic" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="add">
-<h3>add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
-<p>add 2 numbers</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="mi">22</span><span class="o">))).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sub">
-<h3>sub<a class="headerlink" href="#sub" title="Permalink to this headline">¶</a></h3>
-<p>sub 2 numbers</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">sub</span><span class="o">(</span><span class="mi">22</span><span class="o">))).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="mul">
-<h3>mul<a class="headerlink" href="#mul" title="Permalink to this headline">¶</a></h3>
-<p>mul 2 numbers</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">mul</span><span class="o">(</span><span class="mi">22</span><span class="o">))).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="div">
-<h3>div<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
-<p>div 2 numbers</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">div</span><span class="o">(</span><span class="mi">22</span><span class="o">))).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="mod">
-<h3>mod<a class="headerlink" href="#mod" title="Permalink to this headline">¶</a></h3>
-<p>get the modulus of 2 numbers</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">mod</span><span class="o">(</span><span class="mi">2</span><span class="o">))).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// get the even ages</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="and">
-<h3>and<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
-<p>Create an and clause.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
-        <span class="n">r</span><span class="o">.</span><span class="na">and</span><span class="o">(</span>
-                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;Adam&quot;</span><span class="o">)</span>
-                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
-        <span class="o">)</span>
-<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="or">
-<h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
-<p>Create an or clause.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
-        <span class="n">r</span><span class="o">.</span><span class="na">and</span><span class="o">(</span>
-                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;Adam&quot;</span><span class="o">)</span>
-                <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;Eve&quot;</span><span class="o">)</span>
-        <span class="o">)</span>
-<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="eq">
-<h3>eq<a class="headerlink" href="#eq" title="Permalink to this headline">¶</a></h3>
-<p>Specifiy an equals condition</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// All the Johns</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="ne">
-<h3>ne<a class="headerlink" href="#ne" title="Permalink to this headline">¶</a></h3>
-<p>Specifiy a not equal condition</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">ne</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// everyone but John</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="gt">
-<h3>gt<a class="headerlink" href="#gt" title="Permalink to this headline">¶</a></h3>
-<p>Specifiy a greater than condition</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">10</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// everyone older than 10</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="ge">
-<h3>ge<a class="headerlink" href="#ge" title="Permalink to this headline">¶</a></h3>
-<p>Specifiy a greater than or equal condition</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">ge</span><span class="o">(</span><span class="mi">10</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// everyone older than or equal to 10</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="lt">
-<h3>lt<a class="headerlink" href="#lt" title="Permalink to this headline">¶</a></h3>
-<p>Specifiy a less than condition</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">lt</span><span class="o">(</span><span class="mi">10</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// everyone younger than 10</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="le">
-<h3>le<a class="headerlink" href="#le" title="Permalink to this headline">¶</a></h3>
-<p>Specifiy a less than or equal condition</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">le</span><span class="o">(</span><span class="mi">10</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span> <span class="c1">// everyone younger than or equal to 10</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="not">
-<h3>not<a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
-<p>todo: doc and test</p>
 </div>
 </div>
 </div>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Rethink Java Driver</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#milestones">Milestones</a></li>
-<li><a class="reference internal" href="#contribute">Contribute</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#java-api">Java API</a><ul>
-<li><a class="reference internal" href="#accessing-reql">Accessing REQL</a><ul>
-<li><a class="reference internal" href="#r">r</a></li>
-<li><a class="reference internal" href="#connect">connect</a></li>
-<li><a class="reference internal" href="#close">close</a></li>
-<li><a class="reference internal" href="#reconnect">reconnect</a></li>
-<li><a class="reference internal" href="#use">use</a></li>
-<li><a class="reference internal" href="#run">run</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#manipulating-databases">Manipulating Databases</a><ul>
-<li><a class="reference internal" href="#dbcreate">dbCreate</a></li>
-<li><a class="reference internal" href="#dbdrop">dbDrop</a></li>
-<li><a class="reference internal" href="#dblist">dbList</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#manipulating-tables">Manipulating Tables</a><ul>
-<li><a class="reference internal" href="#tablecreate">tableCreate</a></li>
-<li><a class="reference internal" href="#tabledrop">tableDrop</a></li>
-<li><a class="reference internal" href="#tablelist">tableList</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#writing-data">Writing Data</a><ul>
-<li><a class="reference internal" href="#insert">insert</a></li>
-<li><a class="reference internal" href="#get">get</a></li>
-<li><a class="reference internal" href="#getall">getAll</a></li>
-<li><a class="reference internal" href="#between">between</a></li>
-<li><a class="reference internal" href="#filter">filter</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#math-and-logic">Math And Logic</a><ul>
-<li><a class="reference internal" href="#add">add</a></li>
-<li><a class="reference internal" href="#sub">sub</a></li>
-<li><a class="reference internal" href="#mul">mul</a></li>
-<li><a class="reference internal" href="#div">div</a></li>
-<li><a class="reference internal" href="#mod">mod</a></li>
-<li><a class="reference internal" href="#and">and</a></li>
-<li><a class="reference internal" href="#or">or</a></li>
-<li><a class="reference internal" href="#eq">eq</a></li>
-<li><a class="reference internal" href="#ne">ne</a></li>
-<li><a class="reference internal" href="#gt">gt</a></li>
-<li><a class="reference internal" href="#ge">ge</a></li>
-<li><a class="reference internal" href="#lt">lt</a></li>
-<li><a class="reference internal" href="#le">le</a></li>
-<li><a class="reference internal" href="#not">not</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="" class="btn btn-neutral float-right" title="Rethink Java Driver"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Nick Verlinde.
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li><a href="#">rethink-java-driver 0.1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, Nick Verlinde.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Manipulating Tables &mdash; rethink-java-driver 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rethink-java-driver 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Writing Data" href="writing_data.html"/>
+        <link rel="prev" title="Manipulating Databases" href="manipulating_databases.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> rethink-java-driver</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#close">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dblist">dbList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#between">between</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#not">not</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbcreate">dbCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dbdrop">dbDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_databases.html#dblist">dbList</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Manipulating Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tablecreate">tableCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tabledrop">tableDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tablelist">tableList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mul">mul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#div">div</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#mod">mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#and">and</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#or">or</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#eq">eq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ne">ne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#gt">gt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#ge">ge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#lt">lt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#le">le</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">rethink-java-driver</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Manipulating Tables</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/manipulating_tables.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="manipulating-tables">
+<h1>Manipulating Tables<a class="headerlink" href="#manipulating-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tablecreate">
+<h2>tableCreate<a class="headerlink" href="#tablecreate" title="Permalink to this headline">¶</a></h2>
+<p>Create a table. A RethinkDB table is a collection of JSON documents.</p>
+<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a table with the same name already exists, the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
+<p>When creating a table you can specify the following options:</p>
+<ul class="simple">
+<li>primaryKey: the name of the primary key. The default primary key is id;</li>
+<li>durability: if set to &#8216;soft&#8217;, this enables soft durability on this table: writes will be</li>
+<li>acknowledged by the server immediately and flushed to disk in the background. Default is &#8216;hard&#8217; (acknowledgement of writes happens after data has been written to disk);</li>
+<li>datacenter: the name of the datacenter this table should be assigned to.</li>
+</ul>
+<p>Example: Create a table named &#8216;dc_universe&#8217; with the default settings.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTDBQuery.html#com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)" title="com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RTDBQuery.tableCreate</span></tt></a></p>
+</div>
+<div class="section" id="tabledrop">
+<h2>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h2>
+<p>Drop a table. The table and all its data will be deleted.</p>
+<p>If succesful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
+<p>Example: Drop a table named &#8216;dc_universe&#8217;.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableDrop</span><span class="o">(</span><span class="s">&quot;dv_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tablelist">
+<h2>tableList<a class="headerlink" href="#tablelist" title="Permalink to this headline">¶</a></h2>
+<p>List all table names in a database. The result is a list of strings.</p>
+<p>Example: List all tables of the &#8216;test&#8217; database.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="writing_data.html" class="btn btn-neutral float-right" title="Writing Data"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manipulating_databases.html" class="btn btn-neutral" title="Manipulating Databases"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Nick Verlinde.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
