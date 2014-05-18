@@ -139,7 +139,27 @@
 <li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Document Manipulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Document Manipulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#row">row</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pluck">pluck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#without">without</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merge">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#append">append</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prepend">prepend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#difference">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setinsert">setInsert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setunion">setUnion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setintersection">setIntersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setdifference">setDifference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#field">field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hasfields">hasFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#insertat">insertAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spliceat">spliceAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleteat">deleteAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change">change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keys">keys</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
@@ -196,6 +216,162 @@
             
   <div class="section" id="document-manipulation">
 <h1>Document Manipulation<a class="headerlink" href="#document-manipulation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="row">
+<h2>row<a class="headerlink" href="#row" title="Permalink to this headline">¶</a></h2>
+<p>Returns the currently visited document.</p>
+<p>Example: Get all users whose age is greater than 5.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">5</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pluck">
+<h2>pluck<a class="headerlink" href="#pluck" title="Permalink to this headline">¶</a></h2>
+<p>Plucks out one or more attributes from either an object or a sequence of objects (projection).</p>
+<p>Example: We just need information about IronMan&#8221;s reactor and not the rest of the document.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">pluck</span><span class="o">(</span><span class="s">&quot;reactorState&quot;</span><span class="o">,</span> <span class="s">&quot;reactorPower&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="without">
+<h2>without<a class="headerlink" href="#without" title="Permalink to this headline">¶</a></h2>
+<p>The opposite of pluck; takes an object or a sequence of objects, and returns them with the specified paths removed.</p>
+<p>Example: Since we don&#8221;t need it for this computation we&#8221;ll save bandwidth and leave out the list of IronMan&#8221;s romantic conquests.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">without</span><span class="o">(</span><span class="s">&quot;personalVictoriesList&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="merge">
+<h2>merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h2>
+<p>Merge two objects together to construct a new object with properties from both. Gives preference to attributes from other when there is a conflict.</p>
+<p>Example: Equip IronMan for battle.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">merge</span><span class="o">(</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;loadouts&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;alienInvasionKit&quot;</span><span class="o">)</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="append">
+<h2>append<a class="headerlink" href="#append" title="Permalink to this headline">¶</a></h2>
+<p>Append a value to an array.</p>
+<p>Example: Retrieve Iron Man&#8221;s equipment list with the addition of some new boots.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;newBoots&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prepend">
+<h2>prepend<a class="headerlink" href="#prepend" title="Permalink to this headline">¶</a></h2>
+<p>Prepend a value to an array.</p>
+<p>Example: Retrieve Iron Man&#8221;s equipment list with the addition of some new boots.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">).</span><span class="na">prepend</span><span class="o">(</span><span class="s">&quot;newBoots&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="difference">
+<h2>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h2>
+<p>Remove the elements of one array from another array.</p>
+<p>Example: Retrieve Iron Man&#8221;s equipment list without boots.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">difference</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Boots&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setinsert">
+<h2>setInsert<a class="headerlink" href="#setinsert" title="Permalink to this headline">¶</a></h2>
+<p>Add a value to an array and return it as a set (an array with distinct values).</p>
+<p>Example: Retrieve Iron Man&#8221;s equipment list with the addition of some new boots.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setInsert</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;boots&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setunion">
+<h2>setUnion<a class="headerlink" href="#setunion" title="Permalink to this headline">¶</a></h2>
+<p>Add a several values to an array and return it as a set (an array with distinct values).</p>
+<p>Example: Retrieve Iron Man&#8221;s equipment list with the addition of some new boots and an arc reactor.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setUnion</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;boots&quot;</span><span class="o">,</span><span class="s">&quot;arcReactor&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setintersection">
+<h2>setIntersection<a class="headerlink" href="#setintersection" title="Permalink to this headline">¶</a></h2>
+<p>Intersect two arrays returning values that occur in both of them as a set (an array with distinct values).</p>
+<p>Example: Check which pieces of equipment Iron Man has from a fixed list.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setIntersection</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;newBoots&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setdifference">
+<h2>setDifference<a class="headerlink" href="#setdifference" title="Permalink to this headline">¶</a></h2>
+<p>Remove the elements of one array from another and return them as a set (an array with distinct values).</p>
+<p>Example: Check which pieces of equipment Iron Man has, excluding a fixed list.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;equipment&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setDifference</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;newBoots&quot;</span><span class="o">,</span> <span class="s">&quot;arc_reactor&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="field">
+<h2>field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
+<p>Get a single field from an object. If called on a sequence, gets that field from every object in the sequence, skipping objects that lack it.</p>
+<p>Example: What was Iron Man&#8221;s first appearance in a comic?</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;IronMan&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;firstAppearance&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hasfields">
+<h2>hasFields<a class="headerlink" href="#hasfields" title="Permalink to this headline">¶</a></h2>
+<p>Filter if an object has all of the specified fields. An object has a field if it has the specified key and that key maps to a non-None value. For instance, the object {&#8220;a&#8221;:1,&#8221;b&#8221;:2,&#8221;c&#8221;: None} has the fields a and b.</p>
+<p>Example: Which heroes are married?</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">hasFields</span><span class="o">(</span><span class="s">&quot;spouse&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="insertat">
+<h2>insertAt<a class="headerlink" href="#insertat" title="Permalink to this headline">¶</a></h2>
+<p>Insert a value in to an array at a given index. Returns the modified array.</p>
+<p>Example: Hulk decides to join the avengers.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">expr</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Iron Man&quot;</span><span class="o">,</span> <span class="s">&quot;Spider-Man&quot;</span><span class="o">)).</span><span class="na">insertAt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">&quot;Hulk&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="spliceat">
+<h2>spliceAt<a class="headerlink" href="#spliceat" title="Permalink to this headline">¶</a></h2>
+<p>Insert several values in to an array at a given index. Returns the modified array.</p>
+<p>Example: Hulk and Thor decide to join the avengers.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">expr</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Iron Man&quot;</span><span class="o">,</span> <span class="s">&quot;Spider-Man&quot;</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">insertAt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Hulk&quot;</span><span class="o">,</span> <span class="s">&quot;Thor&quot;</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleteat">
+<h2>deleteAt<a class="headerlink" href="#deleteat" title="Permalink to this headline">¶</a></h2>
+<p>Remove an element from an array at a given index. Returns the modified array.</p>
+<p>Example: Hulk decides to leave the avengers.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">expr</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Iron Man&quot;</span><span class="o">,</span> <span class="s">&quot;Spider-Man&quot;</span><span class="o">)).</span><span class="na">deleteAt</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>or delete within a range</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">expr</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Iron Man&quot;</span><span class="o">,</span> <span class="s">&quot;Spider-Man&quot;</span><span class="o">)).</span><span class="na">deleteAt</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change">
+<h2>change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h2>
+<p>Change a value in an array at a given index. Returns the modified array.</p>
+<p>Example: Bruce Banner hulks out.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">expr</span><span class="o">(</span><span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">(</span><span class="s">&quot;Iron Man&quot;</span><span class="o">,</span> <span class="s">&quot;Bruce&quot;</span><span class="o">,</span> <span class="s">&quot;Spider-Man&quot;</span><span class="o">)).</span><span class="na">changeAt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">&quot;Hulk&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keys">
+<h2>keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h2>
+<p>Return an array containing all of the object&#8221;s keys.</p>
+<p>Example: Get all the keys of a row.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;ironman&quot;</span><span class="o">).</span><span class="na">keys</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
