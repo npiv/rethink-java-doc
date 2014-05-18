@@ -137,5 +137,5 @@ Specifiy a less than or equal condition
 ---
 not
 ---
-todo: doc and test
+Compute the logical inverse (not).
 
