@@ -27,13 +27,21 @@ Create a new connection to the database server. The keyword arguments are:
 
 If the connection cannot be established, a RqlDriverError exception will be thrown.
 
-Possible Signatures see: :java:ref:`RethinkDB.connect`
-
 Example: Opens a new connection to the database.
 
 .. code-block:: java
 	
 	RethinkDBConnection connection = r.connect();
+
+Signatures:
+
+.. code-block:: java
+
+    public RethinkDBConnection connect();
+    public RethinkDBConnection connect(String hostname);
+    public RethinkDBConnection connect(String hostname, int port);
+    public RethinkDBConnection connect(String hostname, int port, String authKey);
+    public RethinkDBConnection connect(String hostname, int port, String authKey, int timeout);
 
 
 -----
@@ -72,18 +80,18 @@ Example: Change the default database so that we don't need to specify the databa
 .. code-block:: java
 
 	conn.use("marvel");
-	r.table("heroes").run(conn); // refers to r.db("marvel").table("heroes")
+	r.table("heroes").run(conn); // same as r.db("marvel").table("heroes")
 
 
 ---
 run
 ---
 
-Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.
+Run a query on a connection, returning a list of of objects
 
 Example:
 
 .. code-block:: java
 
-	List<DBObject> results = r.table("mystuff").run(connection);
+	List<Map<String,Object>> results = r.table("mystuff").run(connection);
 

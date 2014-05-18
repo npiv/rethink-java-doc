@@ -58,6 +58,12 @@
         
         
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#java-8-or-previous">Java 8 or Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#contribute">Contribute</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
@@ -65,31 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbcreate">dbCreate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbdrop">dbDrop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dblist">dbList</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablecreate">tableCreate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tabledrop">tableDrop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablelist">tableList</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#between">between</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#filter">filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#add">add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#sub">sub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mul">mul</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#div">div</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mod">mod</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#and">and</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#or">or</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#eq">eq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ne">ne</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#gt">gt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ge">ge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#lt">lt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#le">le</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#not">not</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
@@ -102,15 +83,64 @@
 <li class="toctree-l2"><a class="reference internal" href="#tablecreate">tableCreate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tabledrop">tableDrop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexcreate">indexCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexdrop">indexDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexlist">indexList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexstatus">indexStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexwait">indexWait</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#sync">sync</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="selecting_data.html">Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#db">db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#table">table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joins.html">Joins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#innerjoin">innerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#outerjoin">outerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#eqjoin">eqJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#zip">zip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#withfields">withFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#concatmap">concatMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#orderby">orderBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#skip">Skip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#limit">limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#indexesof">IndexesOf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#isempty">isEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#union">Union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#group">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#ungroup">ungroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#reduce">reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#count">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#sum">sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#avg">avg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#min">min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#distinct">distinct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document_manipulation.html">Document Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
@@ -128,6 +158,8 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
 
         
@@ -167,25 +199,29 @@
 <div class="section" id="tablecreate">
 <h2>tableCreate<a class="headerlink" href="#tablecreate" title="Permalink to this headline">¶</a></h2>
 <p>Create a table. A RethinkDB table is a collection of JSON documents.</p>
-<p>If successful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {created=1}. If a table with the same name already exists, the operation throws <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a>.</p>
+<p>If successful, the operation returns a <tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt> {created=1}. If a table with the same name already exists, the operation throws <tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt>.</p>
 <p>When creating a table you can specify the following options:</p>
 <ul class="simple">
 <li>primaryKey: the name of the primary key. The default primary key is id;</li>
-<li>durability: if set to &#8216;soft&#8217;, this enables soft durability on this table: writes will be</li>
-<li>acknowledged by the server immediately and flushed to disk in the background. Default is &#8216;hard&#8217; (acknowledgement of writes happens after data has been written to disk);</li>
+<li>durability: if set to &#8220;soft&#8221;, this enables soft durability on this table: writes will be</li>
+<li>acknowledged by the server immediately and flushed to disk in the background. Default is &#8220;hard&#8221; (acknowledgement of writes happens after data has been written to disk);</li>
 <li>datacenter: the name of the datacenter this table should be assigned to.</li>
 </ul>
-<p>Example: Create a table named &#8216;dc_universe&#8217; with the default settings.</p>
+<p>Example: Create a table named &#8220;dc_universe&#8221; with the default settings.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableCreate</span><span class="o">(</span><span class="s">&quot;dc_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTDBQuery.html#com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)" title="com.rethinkdb.fluent.RTDBQuery.tableCreate(String, String, Durability, String)"><tt class="xref java java-ref docutils literal"><span class="pre">RTDBQuery.tableCreate</span></tt></a></p>
+<p>Possible Signatures:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="n">TableCreate</span> <span class="nf">tableCreate</span><span class="o">(</span><span class="n">String</span> <span class="n">tableName</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">TableCreate</span> <span class="nf">tableCreate</span><span class="o">(</span><span class="n">String</span> <span class="n">tableName</span><span class="o">,</span> <span class="n">String</span> <span class="n">primaryKey</span><span class="o">,</span> <span class="n">Durability</span> <span class="n">durability</span><span class="o">,</span> <span class="n">String</span> <span class="n">datacenter</span><span class="o">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="tabledrop">
 <h2>tableDrop<a class="headerlink" href="#tabledrop" title="Permalink to this headline">¶</a></h2>
 <p>Drop a table. The table and all its data will be deleted.</p>
-<p>If succesful, the operation returns a <a class="reference internal" href="docs/com/rethinkdb/response/DDLResult.html#com.rethinkdb.response.DDLResult" title="com.rethinkdb.response.DDLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt></a> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8217;t exist a <a class="reference internal" href="docs/com/rethinkdb/RethinkDBException.html#com.rethinkdb.RethinkDBException" title="com.rethinkdb.RethinkDBException"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt></a> is thrown.</p>
-<p>Example: Drop a table named &#8216;dc_universe&#8217;.</p>
+<p>If succesful, the operation returns a <tt class="xref java java-ref docutils literal"><span class="pre">DDLResult</span></tt> {&#8220;dropped&#8221;: 1}. If the specified table doesn&#8221;t exist a <tt class="xref java java-ref docutils literal"><span class="pre">RethinkDBException</span></tt> is thrown.</p>
+<p>Example: Drop a table named &#8220;dc_universe&#8221;.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableDrop</span><span class="o">(</span><span class="s">&quot;dv_universe&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
@@ -193,8 +229,62 @@
 <div class="section" id="tablelist">
 <h2>tableList<a class="headerlink" href="#tablelist" title="Permalink to this headline">¶</a></h2>
 <p>List all table names in a database. The result is a list of strings.</p>
-<p>Example: List all tables of the &#8216;test&#8217; database.</p>
+<p>Example: List all tables of the &#8220;test&#8221; database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">tableList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexcreate">
+<h2>indexCreate<a class="headerlink" href="#indexcreate" title="Permalink to this headline">¶</a></h2>
+<p>Create a new secondary index on this table.</p>
+<p>Example: To efficiently query our heros by code name we have to create a secondary index.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexCreate</span><span class="o">(</span><span class="s">&quot;code_name&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Example: You can also create a secondary index based on an arbitrary function on the document.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexCreate</span><span class="o">(</span><span class="s">&quot;power_rating&quot;</span><span class="o">,</span>
+        <span class="n">hero</span> <span class="o">-&gt;</span> <span class="n">hero</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;combat_power&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">hero</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;compassion_power&quot;</span><span class="o">).</span><span class="na">mul</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexdrop">
+<h2>indexDrop<a class="headerlink" href="#indexdrop" title="Permalink to this headline">¶</a></h2>
+<p>Delete a previously created secondary index of this table.</p>
+<p>Example: Drop a secondary index named &#8220;code_name&#8221;.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">DDLResult</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexDrop</span><span class="o">(</span><span class="s">&quot;code_name&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexlist">
+<h2>indexList<a class="headerlink" href="#indexlist" title="Permalink to this headline">¶</a></h2>
+<p>List all the secondary indexes of this table.</p>
+<p>Example: List the available secondary indexes for this table.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexList</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexstatus">
+<h2>indexStatus<a class="headerlink" href="#indexstatus" title="Permalink to this headline">¶</a></h2>
+<p>Get the status of the specified indexes on this table, or the status of all indexes on this table if no indexes are specified.</p>
+<p>Example: Get the status of all the indexes on test:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">IndexStatusResult</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexStatus</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Example: Get the status of the timestamp index:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">IndexStatusResult</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexStatus</span><span class="o">(</span><span class="s">&quot;timestamp&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexwait">
+<h2>indexWait<a class="headerlink" href="#indexwait" title="Permalink to this headline">¶</a></h2>
+<p>Wait for the specified indexes on this table to be ready, or for all indexes on this table to be ready if no indexes are specified.</p>
+<p>Example: Wait for all indexes on the table test to be ready:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">IndexStatusResult</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexWait</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Example: Wait for the index timestamp to be ready:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">IndexStatusResult</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;dc&quot;</span><span class="o">).</span><span class="na">indexWait</span><span class="o">(</span><span class="s">&quot;timestamp&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>

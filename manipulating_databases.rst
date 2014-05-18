@@ -40,4 +40,3 @@ Example:
 .. code-block:: java
     
      List<String> result = r.dbList().run(connection);
-

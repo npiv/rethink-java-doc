@@ -29,7 +29,7 @@
 
   
     <link rel="top" title="rethink-java-driver 0.1 documentation" href="index.html"/>
-        <link rel="next" title="Math And Logic" href="math_logic.html"/>
+        <link rel="next" title="Selecting Data" href="selecting_data.html"/>
         <link rel="prev" title="Manipulating Tables" href="manipulating_tables.html"/> 
 
   
@@ -58,6 +58,12 @@
         
         
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#java-8-or-previous">Java 8 or Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#contribute">Contribute</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
@@ -65,31 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbcreate">dbCreate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbdrop">dbDrop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dblist">dbList</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablecreate">tableCreate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tabledrop">tableDrop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablelist">tableList</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#between">between</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#filter">filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#add">add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#sub">sub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mul">mul</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#div">div</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mod">mod</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#and">and</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#or">or</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#eq">eq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ne">ne</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#gt">gt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ge">ge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#lt">lt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#le">le</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#not">not</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
@@ -102,15 +83,64 @@
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexcreate">indexCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexdrop">indexDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexlist">indexList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexstatus">indexStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexwait">indexWait</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Writing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sync">sync</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="selecting_data.html">Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#db">db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#table">table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joins.html">Joins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#innerjoin">innerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#outerjoin">outerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#eqjoin">eqJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#zip">zip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#withfields">withFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#concatmap">concatMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#orderby">orderBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#skip">Skip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#limit">limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#indexesof">IndexesOf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#isempty">isEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#union">Union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#group">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#ungroup">ungroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#reduce">reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#count">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#sum">sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#avg">avg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#min">min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#distinct">distinct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document_manipulation.html">Document Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
@@ -128,6 +158,8 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
 
         
@@ -169,43 +201,93 @@
 <p>Insert documents into a table. Accepts a single document or an array of documents.</p>
 <p>The optional arguments are:</p>
 <ul class="simple">
-<li>durability: possible values are hard and soft. This option will override the table or query&#8217;s durability setting (set in run). In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
+<li>durability: possible values are hard and soft. This option will override the table or query&#8221;s durability setting (set in run). In soft durability mode RethinkDB will acknowledge the write immediately after receiving it, but before the write has been committed to disk.</li>
 <li>return_vals: if set to True and in case of a single insert/upsert, the inserted/updated document will be returned.</li>
 <li>upsert: when set to True, performs a replace if a document with the same primary key exists.</li>
 </ul>
 <p>Insert returns an object that contains the following attributes:</p>
-<p>See the doc of the returned <a class="reference internal" href="docs/com/rethinkdb/response/model/DMLResult.html#com.rethinkdb.response.model.DMLResult" title="com.rethinkdb.response.model.DMLResult"><tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt></a> for a description of the attributes returned.</p>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTFluentQuery.html#com.rethinkdb.fluent.RTFluentQuery.insert(com.rethinkdb.model.DBObject, Durability, boolean, boolean)" title="com.rethinkdb.fluent.RTFluentQuery.insert(com.rethinkdb.model.DBObject, Durability, boolean, boolean)"><tt class="xref java java-ref docutils literal"><span class="pre">RTFluentQuery.insert</span></tt></a></p>
+<p>See the doc of the returned <tt class="xref java java-ref docutils literal"><span class="pre">DMLResult</span></tt> for a description of the attributes returned.</p>
+<p>see <a class="reference external" href="http://rethinkdb.com/api/python/insert/">Python Doc</a> for full capabilites</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">DMLResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">rable</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span>
-                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jack&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
-                                   <span class="k">new</span> <span class="nf">DBObjectBuilder</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jill&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">()</span>
+                                   <span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jack&quot;</span><span class="o">),</span>
+                                   <span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Jill&quot;</span><span class="o">)</span>
                       <span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 
 <span class="n">result</span><span class="o">.</span><span class="na">getInserted</span><span class="o">()</span> <span class="c1">// = 2</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="get">
-<h2>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
-<p>Get a document by primary key.</p>
-<p>Example: Find a document with the primary key &#8216;superman&#8217;.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">DBObject</span> <span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+<p>signatures:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="n">Insert</span> <span class="nf">insert</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">dbObject</span><span class="o">,</span> <span class="n">Durability</span> <span class="n">durability</span><span class="o">,</span> <span class="n">Boolean</span> <span class="n">returnVals</span><span class="o">,</span> <span class="n">Boolean</span> <span class="n">upsert</span><span class="o">);</span>
+<span class="kd">public</span> <span class="n">Insert</span> <span class="nf">insert</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;...</span> <span class="n">dbObject</span><span class="o">);</span>
+<span class="kd">public</span> <span class="n">Insert</span> <span class="nf">insert</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="n">dbObjects</span><span class="o">);</span>
+<span class="kd">public</span> <span class="n">Insert</span> <span class="nf">insert</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="n">dbObjects</span><span class="o">,</span> <span class="n">Durability</span> <span class="n">durability</span><span class="o">,</span> <span class="n">Boolean</span> <span class="n">returnVals</span><span class="o">,</span> <span class="n">Boolean</span> <span class="n">upsert</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="getall">
-<h2>getAll<a class="headerlink" href="#getall" title="Permalink to this headline">¶</a></h2>
-<p>Get all documents where the given value matches the value of the requested index.</p>
-<p>Possible Signatures: <a class="reference internal" href="docs/com/rethinkdb/fluent/RTFluentQuery.html#com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)" title="com.rethinkdb.fluent.RTFluentQuery.getAll(Number, Number)"><tt class="xref java java-ref docutils literal"><span class="pre">RTFluentQuery.getAll</span></tt></a></p>
-<p>Example: Secondary index keys are not guaranteed to be unique so we cannot query via &#8220;get&#8221; when using a secondary index.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;superman&quot;</span><span class="o">,</span><span class="s">&quot;spiderman&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+<div class="section" id="update">
+<h2>update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<p>Update JSON documents in a table. Accepts a JSON document, a ReQL expression, or a combination of the two.</p>
+<p>Example: Update the status of the post with id of 1 to published.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">update</span><span class="o">(</span><span class="k">new</span> <span class="n">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;published&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
 </pre></div>
 </div>
-<p>TODO: implement</p>
+<p>Example: Update the status of all posts to published.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">update</span><span class="o">(</span><span class="k">new</span> <span class="n">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;published&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
 </div>
-<div class="section" id="filter">
-<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
-<p>TODO: implement</p>
+<p>Example: Update the status of all the post written by William.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(...).</span><span class="na">update</span><span class="o">(</span><span class="k">new</span> <span class="n">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;published&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Example: Increment the field view with id of 1. This query will throw an error if the field views doesn&#8221;t exist.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">update</span><span class="o">(</span>
+        <span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;views&quot;</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="na">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;views&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+<span class="o">}).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Example: Increment the field view of the post with id of 1. If the field views does not exist, it will be set to 0.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">update</span><span class="o">({</span>
+<span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;views&quot;</span><span class="o">,</span> <span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;views&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">)).</span><span class="na">default</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">)</span>
+<span class="o">}).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Example: Perform a conditional update.</p>
+<p>If the post has more than 100 views, set the type of a post to hot, else set it to normal.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">update</span><span class="o">(</span><span class="n">post</span> <span class="o">-&gt;</span>
+<span class="n">r</span><span class="o">.</span><span class="na">branch</span><span class="o">(</span>
+        <span class="n">post</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;views&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">100</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;type&quot;</span><span class="o">,</span> <span class="s">&quot;hot&quot;</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;type&quot;</span><span class="o">,</span> <span class="s">&quot;normal&quot;</span><span class="o">)</span>
+<span class="o">)</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="replace">
+<h2>replace<a class="headerlink" href="#replace" title="Permalink to this headline">¶</a></h2>
+<p>Replace documents in a table. Accepts a JSON document or a ReQL expression, and replaces the original document with the new one. The new document must have the same primary key as the original document.</p>
+<p>Example: Replace the document with the primary key 1.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span>
+        <span class="k">new</span> <span class="nf">MapObject</span><span class="o">().</span><span class="na">with</span><span class="o">(...)</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete">
+<h2>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<p>Delete one or more documents from a table.</p>
+<p>Example: Delete a single document from the table comments.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;comments&quot;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;7eab9e63-73f1-4f33-8ce4-95cbea626f59&quot;</span><span class="o">).</span><span class="na">delete</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sync">
+<h2>sync<a class="headerlink" href="#sync" title="Permalink to this headline">¶</a></h2>
+<p>sync ensures that writes on a given table are written to permanent storage. Queries that specify soft durability (durability=&#8221;soft&#8221;) do not give such guarantees, so sync can be used to ensure the state of these queries. A call to sync does not return until all previous writes to the table are persisted.</p>
+<p>Example: After having updated multiple heroes with soft durability, we now want to wait until these changes are persisted.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">sync</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -215,7 +297,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="math_logic.html" class="btn btn-neutral float-right" title="Math And Logic"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="selecting_data.html" class="btn btn-neutral float-right" title="Selecting Data"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="manipulating_tables.html" class="btn btn-neutral" title="Manipulating Tables"><span class="fa fa-arrow-circle-left"></span> Previous</a>

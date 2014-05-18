@@ -29,7 +29,8 @@
 
   
     <link rel="top" title="rethink-java-driver 0.1 documentation" href="index.html"/>
-        <link rel="prev" title="Writing Data" href="writing_data.html"/> 
+        <link rel="next" title="Dates and Times" href="dates_times.html"/>
+        <link rel="prev" title="String Manipulation" href="string_manipulation.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -57,6 +58,12 @@
         
         
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#java-8-or-previous">Java 8 or Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#contribute">Contribute</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#r">r</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#connect">connect</a></li>
@@ -64,31 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#reconnect">reconnect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#use">use</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#run">run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbcreate">dbCreate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dbdrop">dbDrop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#dblist">dbList</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablecreate">tableCreate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tabledrop">tableDrop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#tablelist">tableList</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#between">between</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#filter">filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#add">add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#sub">sub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mul">mul</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#div">div</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#mod">mod</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#and">and</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#or">or</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#eq">eq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ne">ne</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#gt">gt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#ge">ge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#lt">lt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#le">le</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accessing_reql.html#not">not</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manipulating_databases.html">Manipulating Databases</a><ul>
@@ -101,15 +83,64 @@
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexcreate">indexCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexdrop">indexDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexlist">indexList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexstatus">indexStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexwait">indexWait</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#sync">sync</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="selecting_data.html">Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#db">db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#table">table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joins.html">Joins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#innerjoin">innerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#outerjoin">outerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#eqjoin">eqJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#zip">zip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#withfields">withFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#concatmap">concatMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#orderby">orderBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#skip">Skip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#limit">limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#indexesof">IndexesOf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#isempty">isEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#union">Union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#group">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#ungroup">ungroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#reduce">reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#count">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#sum">sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#avg">avg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#min">min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#distinct">distinct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document_manipulation.html">Document Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#add">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sub">sub</a></li>
@@ -127,6 +158,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#not">not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
 
         
@@ -276,8 +309,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="dates_times.html" class="btn btn-neutral float-right" title="Dates and Times"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="writing_data.html" class="btn btn-neutral" title="Writing Data"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="string_manipulation.html" class="btn btn-neutral" title="String Manipulation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -47,7 +47,7 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
-	echo "what?"
+	rm -rf html/
 
 copyclean:
 	sed -i 's/RqlRuntimeError/:java:ref:\`RethinkDBException\`/' index.rst	
@@ -59,7 +59,8 @@ push:
 
 apis:
 	 mvn javadoc:javadoc -f ../rethink-java-driver/pom.xml
-	 javasphinx-apidoc -f -o docs ../rethink-java-driver/src/main/java
+	 cp -R ../rethink-java-driver/target/site/apidocs .
+# javasphinx-apidoc -f -o docs ../rethink-java-driver/src/main/java
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

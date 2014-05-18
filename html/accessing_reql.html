@@ -30,7 +30,7 @@
   
     <link rel="top" title="rethink-java-driver 0.1 documentation" href="index.html"/>
         <link rel="next" title="Manipulating Databases" href="manipulating_databases.html"/>
-        <link rel="prev" title="Rethink Java Driver" href="index.html"/> 
+        <link rel="prev" title="Notes" href="notes.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -58,6 +58,12 @@
         
         
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#java-8-or-previous">Java 8 or Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#contribute">Contribute</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Accessing REQL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#r">r</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connect">connect</a></li>
@@ -77,15 +83,64 @@
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexcreate">indexCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexdrop">indexDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexlist">indexList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexstatus">indexStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexwait">indexWait</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#sync">sync</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="selecting_data.html">Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#db">db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#table">table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joins.html">Joins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#innerjoin">innerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#outerjoin">outerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#eqjoin">eqJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#zip">zip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#withfields">withFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#concatmap">concatMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#orderby">orderBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#skip">Skip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#limit">limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#indexesof">IndexesOf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#isempty">isEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#union">Union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#group">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#ungroup">ungroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#reduce">reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#count">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#sum">sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#avg">avg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#min">min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#distinct">distinct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document_manipulation.html">Document Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
@@ -103,6 +158,8 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
 
         
@@ -157,9 +214,16 @@
 <li>auth_key: the authentification key, by default the empty string.</li>
 </ul>
 <p>If the connection cannot be established, a RqlDriverError exception will be thrown.</p>
-<p>Possible Signatures see: <a class="reference internal" href="docs/com/rethinkdb/RethinkDB.html#com.rethinkdb.RethinkDB.connect(String)" title="com.rethinkdb.RethinkDB.connect(String)"><tt class="xref java java-ref docutils literal"><span class="pre">RethinkDB.connect</span></tt></a></p>
 <p>Example: Opens a new connection to the database.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">RethinkDBConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Signatures:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="n">RethinkDBConnection</span> <span class="nf">connect</span><span class="o">();</span>
+<span class="kd">public</span> <span class="n">RethinkDBConnection</span> <span class="nf">connect</span><span class="o">(</span><span class="n">String</span> <span class="n">hostname</span><span class="o">);</span>
+<span class="kd">public</span> <span class="n">RethinkDBConnection</span> <span class="nf">connect</span><span class="o">(</span><span class="n">String</span> <span class="n">hostname</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">);</span>
+<span class="kd">public</span> <span class="n">RethinkDBConnection</span> <span class="nf">connect</span><span class="o">(</span><span class="n">String</span> <span class="n">hostname</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">,</span> <span class="n">String</span> <span class="n">authKey</span><span class="o">);</span>
+<span class="kd">public</span> <span class="n">RethinkDBConnection</span> <span class="nf">connect</span><span class="o">(</span><span class="n">String</span> <span class="n">hostname</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">,</span> <span class="n">String</span> <span class="n">authKey</span><span class="o">,</span> <span class="kt">int</span> <span class="n">timeout</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>
@@ -184,15 +248,15 @@
 <p>Change the default database on this connection.</p>
 <p>Example: Change the default database so that we don&#8217;t need to specify the database when referencing a table.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="n">conn</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">);</span>
-<span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heroes&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span> <span class="c1">// refers to r.db(&quot;marvel&quot;).table(&quot;heroes&quot;)</span>
+<span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heroes&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">);</span> <span class="c1">// same as r.db(&quot;marvel&quot;).table(&quot;heroes&quot;)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run">
 <h2>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
-<p>Run a query on a connection, returning either a single JSON result or a cursor, depending on the query.</p>
+<p>Run a query on a connection, returning a list of of objects</p>
 <p>Example:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">DBObject</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;mystuff&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;mystuff&quot;</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
 </pre></div>
 </div>
 </div>
@@ -207,7 +271,7 @@
         <a href="manipulating_databases.html" class="btn btn-neutral float-right" title="Manipulating Databases"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Rethink Java Driver"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="notes.html" class="btn btn-neutral" title="Notes"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

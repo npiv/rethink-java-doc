@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Rethink Java Driver &mdash; rethink-java-driver 0.1 documentation</title>
+  <title>Table of Contents &mdash; rethink-java-driver 0.1 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
 
   
     <link rel="top" title="rethink-java-driver 0.1 documentation" href="#"/>
-        <link rel="next" title="Rethink Java Driver" href=""/> 
+        <link rel="next" title="Notes" href="notes.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -56,11 +56,11 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Rethink Java Driver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#milestones">Milestones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#java-8-or-previous">Java 8 or Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#contribute">Contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
@@ -82,15 +82,64 @@
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexcreate">indexCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexdrop">indexDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexlist">indexList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexstatus">indexStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexwait">indexWait</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#sync">sync</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="selecting_data.html">Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#db">db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#table">table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joins.html">Joins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#innerjoin">innerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#outerjoin">outerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#eqjoin">eqJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#zip">zip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#withfields">withFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#concatmap">concatMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#orderby">orderBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#skip">Skip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#limit">limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#indexesof">IndexesOf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#isempty">isEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#union">Union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#group">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#ungroup">ungroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#reduce">reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#count">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#sum">sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#avg">avg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#min">min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#distinct">distinct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document_manipulation.html">Document Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
@@ -108,6 +157,8 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
 
         
@@ -131,7 +182,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>Rethink Java Driver</li>
+    <li>Table of Contents</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="_sources/index.txt" rel="nofollow"> View page source</a>
@@ -142,57 +193,14 @@
 </div>
           <div role="main">
             
-  <div class="section" id="rethink-java-driver">
-<h1>Rethink Java Driver<a class="headerlink" href="#rethink-java-driver" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The Rethink Java Driver aims to closely mirror the existing ruby/python/js implementations. Due to limitations of java being a typed language some inspiration will be sought from existing java big data drivers like mongo to make the api as fluent as possible for the end user.</p>
-<p>At the same time with java 8 lambda syntax we should be able to get pretty close. The driver itself expects a minimum of java 1.6. But users using java 1.8 can do funky stuff like:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span>
-        <span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span><span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">20</span><span class="o">))</span> <span class="c1">// this is executed remotely!</span>
-<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-<p>Which pre java 1.8 would need to be invoked with an anonymous inner class like</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">lambda</span><span class="o">(</span><span class="k">new</span> <span class="n">DBLambda</span><span class="o">()</span> <span class="o">{</span>
-      <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="n">RTFluentRow</span> <span class="nf">apply</span><span class="o">(</span><span class="n">RTFluentRow</span> <span class="n">row</span><span class="o">)</span> <span class="o">{</span>
-          <span class="k">return</span> <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
-      <span class="o">}</span>
-<span class="o">})).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-<p>Of course you can still choose to create concrete FunctionClasses in pre java 8 code and have it look something like:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;heros&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="k">new</span> <span class="n">AgeGTCondition</span><span class="o">(</span><span class="mi">20</span><span class="o">)).</span><span class="na">run</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For the remainder of the documentation all the examples will use the Java 8 Lambda syntax where possible. Just make note that java 1.6+ is supported, albeit in a slightly more limited form.</p>
-</div>
-</div>
-<div class="section" id="milestones">
-<h2>Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li>complete implementation + documentation of core methods in the <a class="reference external" href="http://rethinkdb.com/api/python/">python api</a> See the left hand menu for what&#8217;s there already</li>
-<li>ORM module</li>
-<li>Spring data integration</li>
-<li>DB connection pooling</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="contribute">
-<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
-<p>Fork, submit an issue, contact me on github, or send me a mail at nick.verlinde on the google mail. I should be able to respond to any of those mediums within 24 hours.</p>
-<div class="section" id="user-documentation">
-<h3>User Documentation<a class="headerlink" href="#user-documentation" title="Permalink to this headline">¶</a></h3>
+  <div class="section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Rethink Java Driver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#milestones">Milestones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#java-8-or-previous">Java 8 or Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html#contribute">Contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="accessing_reql.html">Accessing REQL</a><ul>
@@ -214,15 +222,64 @@
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablecreate">tableCreate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tabledrop">tableDrop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#tablelist">tableList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexcreate">indexCreate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexdrop">indexDrop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexlist">indexList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexstatus">indexStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulating_tables.html#indexwait">indexWait</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="writing_data.html">Writing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="writing_data.html#insert">insert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#get">get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#getall">getAll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_data.html#filter">filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#update">update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#replace">replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#delete">delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_data.html#sync">sync</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="selecting_data.html">Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#db">db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#table">table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#get">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#getall">getAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selecting_data.html#filter">filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joins.html">Joins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#innerjoin">innerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#outerjoin">outerJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#eqjoin">eqJoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joins.html#zip">zip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#withfields">withFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#concatmap">concatMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#orderby">orderBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#skip">Skip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#limit">limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#indexesof">IndexesOf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#isempty">isEmpty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#union">Union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregation.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#group">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#ungroup">ungroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#reduce">reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#count">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#sum">sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#avg">avg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#min">min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#max">max</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#distinct">distinct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html#contains">contains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document_manipulation.html">Document Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string_manipulation.html">String Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_logic.html">Math And Logic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#add">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#sub">sub</a></li>
@@ -240,9 +297,9 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
-</div>
-</div>
 </div>
 </div>
 
@@ -252,7 +309,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="" class="btn btn-neutral float-right" title="Rethink Java Driver"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="notes.html" class="btn btn-neutral float-right" title="Notes"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

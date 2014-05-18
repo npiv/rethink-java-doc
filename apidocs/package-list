@@ -1,0 +1,7 @@
+com.rethinkdb
+com.rethinkdb.ast.helper
+com.rethinkdb.ast.query
+com.rethinkdb.ast.query.gen
+com.rethinkdb.model
+com.rethinkdb.response
+com.rethinkdb.response.model
