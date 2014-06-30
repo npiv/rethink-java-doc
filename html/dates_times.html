@@ -184,7 +184,27 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Dates and Times</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Dates and Times</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#now">now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time">time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#epochtime">epochTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intimezone">inTimezone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timezone">timezone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#during">during</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#date">date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timeofday">timeOfDay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#year">year</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#month">month</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#day">day</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dayofweek">dayOfWeek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dayofyear">dayOfYear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hours">hours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#minutes">minutes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#seconds">seconds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toiso8601">toISO8601</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toepochtime">toEpochTime</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="control_structures.html">Control Structures</a></li>
 </ul>
 
@@ -222,7 +242,155 @@
             
   <div class="section" id="dates-and-times">
 <h1>Dates and Times<a class="headerlink" href="#dates-and-times" title="Permalink to this headline">¶</a></h1>
-<p>Date support is underway and will be added in the next release.</p>
+<div class="section" id="now">
+<h2>now<a class="headerlink" href="#now" title="Permalink to this headline">¶</a></h2>
+<p>Return a time object representing the current time in UTC. The command now() is computed once when the server receives the query, so multiple instances of r.now() will always return the same time inside a query.</p>
+<p>Example: Add a new user with the time at which he subscribed.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">).</span><span class="na">insert</span><span class="o">(</span><span class="k">new</span> <span class="n">MapObject</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;name&quot;</span> <span class="s">&quot;John&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="s">&quot;date&quot;</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="na">now</span><span class="o">())</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time">
+<h2>time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h2>
+<p>Create a time object for a specific time.</p>
+<p>examples:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">time</span><span class="o">(</span><span class="mi">2012</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// date</span>
+
+<span class="n">r</span><span class="o">.</span><span class="na">time</span><span class="o">(</span><span class="mi">2014</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span> <span class="mi">22</span><span class="o">,</span><span class="mi">45</span><span class="o">,</span><span class="mi">01</span><span class="o">)</span> <span class="c1">// with time</span>
+
+<span class="n">r</span><span class="o">.</span><span class="na">time</span><span class="o">(</span><span class="mi">2012</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;Z&quot;</span><span class="o">)</span> <span class="c1">// date with timezone</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="epochtime">
+<h2>epochTime<a class="headerlink" href="#epochtime" title="Permalink to this headline">¶</a></h2>
+<p>Create a time object based on seconds since epoch. The first argument is a double and will be rounded to three decimal places (millisecond-precision).</p>
+<p>Example: Update the birthdate of the user &#8220;John&#8221; to November 3rd, 1986.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">epoch_time</span><span class="o">(</span><span class="mi">531360000</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intimezone">
+<h2>inTimezone<a class="headerlink" href="#intimezone" title="Permalink to this headline">¶</a></h2>
+<p>Return a new time object with a different timezone. While the time stays the same, the results returned by methods such as hours() will change since they take the timezone into account. The timezone argument has to be of the ISO 8601 format.</p>
+<p>Example: Hour of the day in San Francisco (UTC/GMT -8, without daylight saving time).</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">inTimezone</span><span class="o">(</span><span class="s">&quot;-08:00&quot;</span><span class="o">).</span><span class="na">hours</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="timezone">
+<h2>timezone<a class="headerlink" href="#timezone" title="Permalink to this headline">¶</a></h2>
+<p>Return the timezone of the time object.</p>
+<p>Example: Return all the users in the &#8220;-07:00&#8221; timezone.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">user</span><span class="o">-&gt;</span>
+<span class="n">user</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;subscriptionDate&quot;</span><span class="o">).</span><span class="na">timezone</span><span class="o">().</span><span class="na">eq</span><span class="o">(</span><span class="s">&quot;-07:00&quot;</span><span class="o">)</span>
+<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="during">
+<h2>during<a class="headerlink" href="#during" title="Permalink to this headline">¶</a></h2>
+<p>Return if a time is between two other times.</p>
+<p>Example: Retrieve all the posts that were posted between December 1st, 2013 (inclusive) and December 10th, 2013 (exclusive).</p>
+<div class="highlight-java"><div class="highlight"><pre>    <span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
+    <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;date&quot;</span><span class="o">).</span><span class="na">during</span><span class="o">(</span>
+            <span class="n">r</span><span class="o">.</span><span class="na">time</span><span class="o">(</span><span class="mi">2013</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;Z&quot;</span><span class="o">),</span>  <span class="c1">// left bound</span>
+            <span class="n">r</span><span class="o">.</span><span class="na">time</span><span class="o">(</span><span class="mi">2013</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="s">&quot;Z&quot;</span><span class="o">,</span>  <span class="c1">// right bound</span>
+            <span class="kc">true</span><span class="o">,</span>  <span class="c1">// left inclusive</span>
+            <span class="kc">false</span><span class="o">)</span> <span class="c1">// right inclusive</span>
+<span class="o">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="date">
+<h2>date<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h2>
+<p>return a new time object only based on the day, month and year (ie. the same day at 00:00).</p>
+<p>Example: Retrieve all the users whose birthday is today</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">user</span><span class="o">-&gt;</span>
+    <span class="n">user</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;birthdate&quot;</span><span class="o">).</span><span class="na">date</span><span class="o">().</span><span class="na">eq</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">date</span><span class="o">())</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="timeofday">
+<h2>timeOfDay<a class="headerlink" href="#timeofday" title="Permalink to this headline">¶</a></h2>
+<p>Return the number of seconds elapsed since the beginning of the day stored in the time object.</p>
+<p>Example: Retrieve posts that were submitted before noon.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
+    <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;date&quot;</span><span class="o">).</span><span class="na">timeOfDay</span><span class="o">().</span><span class="na">lt</span><span class="o">(</span><span class="mi">12</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">)</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="year">
+<h2>year<a class="headerlink" href="#year" title="Permalink to this headline">¶</a></h2>
+<p>Return the year of a time object.</p>
+<p>Example: Retrieve all the users born in 1986.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">user</span><span class="o">-&gt;</span>
+    <span class="n">user</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;birthdate&quot;</span><span class="o">).</span><span class="na">year</span><span class="o">().</span><span class="na">eq</span><span class="o">(</span><span class="mi">1986</span><span class="o">)</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="month">
+<h2>month<a class="headerlink" href="#month" title="Permalink to this headline">¶</a></h2>
+<p>Return the month of a time object as a number between 1 and 12. For your convenience, the terms r.january, r.february etc. are defined and map to the appropriate integer.</p>
+<p>Example: Retrieve all the users who were born in November.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">row</span><span class="o">-&gt;</span>
+    <span class="n">row</span><span class="o">.</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;birthdate&quot;</span><span class="o">).</span><span class="na">month</span><span class="o">().</span><span class="na">eq</span><span class="o">(</span><span class="mi">11</span><span class="o">)</span>
+<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="day">
+<h2>day<a class="headerlink" href="#day" title="Permalink to this headline">¶</a></h2>
+<p>Return the day of a time object as a number between 1 and 31.</p>
+<p>Example: see month</p>
+</div>
+<div class="section" id="dayofweek">
+<h2>dayOfWeek<a class="headerlink" href="#dayofweek" title="Permalink to this headline">¶</a></h2>
+<p>Return the day of week of a time object as a number between 1 and 7 (following ISO 8601 standard). For your convenience, the terms r.monday, r.tuesday etc. are defined and map to the appropriate integer.</p>
+<p>Example: see month</p>
+</div>
+<div class="section" id="dayofyear">
+<h2>dayOfYear<a class="headerlink" href="#dayofyear" title="Permalink to this headline">¶</a></h2>
+<p>Return the day of the year of a time object as a number between 1 and 366 (following ISO 8601 standard).</p>
+<p>Example: see month</p>
+</div>
+<div class="section" id="hours">
+<h2>hours<a class="headerlink" href="#hours" title="Permalink to this headline">¶</a></h2>
+<p>Return the hour in a time object as a number between 0 and 23.</p>
+<p>Example: see month</p>
+</div>
+<div class="section" id="minutes">
+<h2>minutes<a class="headerlink" href="#minutes" title="Permalink to this headline">¶</a></h2>
+<p>Return the minute in a time object as a number between 0 and 59.</p>
+<p>Example: see month</p>
+</div>
+<div class="section" id="seconds">
+<h2>seconds<a class="headerlink" href="#seconds" title="Permalink to this headline">¶</a></h2>
+<p>Return the seconds in a time object as a number between 0 and 59.999 (double precision).</p>
+<p>Example: see month</p>
+</div>
+<div class="section" id="toiso8601">
+<h2>toISO8601<a class="headerlink" href="#toiso8601" title="Permalink to this headline">¶</a></h2>
+<p>Convert a time object to its iso 8601 format.</p>
+<p>Example: Return the current time in an ISO8601 format.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">toISO8601</span><span class="o">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="toepochtime">
+<h2>toEpochTime<a class="headerlink" href="#toepochtime" title="Permalink to this headline">¶</a></h2>
+<p>Convert a time object to its epoch time.</p>
+<p>Example: Return the current time in seconds since the Unix Epoch with millisecond-precision.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">toEpochTime</span><span class="o">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

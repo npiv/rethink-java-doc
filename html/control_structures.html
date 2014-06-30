@@ -183,8 +183,31 @@
 <li class="toctree-l2"><a class="reference internal" href="math_logic.html#not">not</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Control Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates_times.html">Dates and Times</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#now">now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#time">time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#epochtime">epochTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#intimezone">inTimezone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#timezone">timezone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#during">during</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#date">date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#timeofday">timeOfDay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#year">year</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#month">month</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#day">day</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#dayofweek">dayOfWeek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#dayofyear">dayOfYear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#hours">hours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#minutes">minutes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#seconds">seconds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#toiso8601">toISO8601</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dates_times.html#toepochtime">toEpochTime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Control Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#branch">branch</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -221,7 +244,21 @@
             
   <div class="section" id="control-structures">
 <h1>Control Structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h1>
-<p>control structures will be added soon. For 99% of end user use cases these won&#8217;t be missed</p>
+<div class="section" id="branch">
+<h2>branch<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h2>
+<p>If the test expression returns False or None, the false_branch will be evaluated. Otherwise, the true_branch will be evaluated.</p>
+<p>The branch command is effectively an if renamed due to language constraints.</p>
+<p>Example: Return heroes and superheroes.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">r</span><span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="s">&quot;marvel&quot;</span><span class="o">).</span><span class="na">map</span><span class="o">(</span>
+    <span class="n">r</span><span class="o">.</span><span class="na">branch</span><span class="o">(</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">row</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;victories&quot;</span><span class="o">).</span><span class="na">gt</span><span class="o">(</span><span class="mi">100</span><span class="o">),</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">row</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="s">&quot; is a superhero&quot;</span><span class="o">),</span>
+        <span class="n">r</span><span class="o">.</span><span class="na">row</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="s">&quot; is a hero&quot;</span><span class="o">)</span>
+    <span class="o">)</span>
+<span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">conn</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
